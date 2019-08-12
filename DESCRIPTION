@@ -1,0 +1,11 @@
+Package: panelmap
+Title: Create panels for summarizing binary data, categorical data (more than 2 categories) and continuous data for known groups
+Version: 0.1.0
+Authors@R: person("Arshi", "Arora", email = "arshiaurora@gmail.com", role = c("aut", "cre"))
+Description: panelmap is a visual aid to represent grouped data and its corresponding variables in the form of a panel.
+    Each row of a panelmap is called a panelet. panelmap can also output association tests to identify trends in the dataset  
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat
