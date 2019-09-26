@@ -3,6 +3,7 @@
 #summary table 1 functions:
 # 1. get.summary
 # 2. get.summary2
+#3. get.colvector 
 ##################################
 
 
@@ -148,7 +149,27 @@ get.summary2<-function(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL){
 }
 
 
-#take in a list of results after get.summary2, and sort them according to pvalue
-sort.get.summary<-function(){}
+##################################
+#get a color vector with match and NA 
+get.colvector<-function(labels,col, NA.flag=FALSE, NA.col="grey"){
+  
+  if(!NA.flag & anyNA(labels)){stop("NAs exist in your labels. pass NA.flag==TRUE!")}
 
+  if(NA.flag & anyNA(labels)){col <- c(col, NA.col)}
+
+  if(NA.flag & !anyNA(labels)){message("No NAs found in labels")}
+  
+  if (length(unique(labels)) != length(col)){ stop("Unequal length of unique labels and color")}
+  if (anyDuplicated(col)) { stop("Duplicated colors for some values. check col parameter")}
+
+  ul<-sort(unique(labels), na.last=TRUE)
+  #if(is.factor(labels)){ul<-levels(labels)} - sort works on factor, but check later 
+  #use match 
+  labels.col <- col[match(labels, ul)]
+  
+  if(!is.null(names(labels))){names(labels.col) <- names(labels)}
+  key <- rbind(as.character(ul), col)
+  labels.list<-list(labels.col=labels.col, key=key)
+  return(labels.list)
+}
 
