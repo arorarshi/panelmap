@@ -19,14 +19,14 @@ panelet.group(soln, soln.col,soln.name="group", cex=1,border=FALSE, legend=FALSE
   \item{soln.name}{ a string, name of your group labels}
   \item{cex}{ default is 1. Adjust the font size of \code{soln.name}}
   \item{border}{logical. default is \code{FALSE}. If \code{TRUE} a border in black color is drawn across the color vector. }
-  \item{legend}{logical. default is \code{FALSE}. if \code{TRUE} it returns a key specifying each color assigned to the class labels. Only works with \code{makepanel} }
+  \item{legend}{logical. default is \code{FALSE}. if \code{TRUE} it returns a key specifying each color assigned to the class labels. Only displays in the plot with \code{makepanel} }
 
 }
 \details{
 
 }
 \value{
-A colored row ordered by class labels is plotted.
+A colored \code{panelet} ordered by class labels is plotted.
 
 \item{key}{ if legend = \code{TRUE}, returns a key mapping the group labels to specific color }
 
@@ -43,13 +43,16 @@ Arshi Arora
 \examples{
 
 #adjust margins and number of panelet values
-par(mfrow=c(3,1),mar=c(0,8,0,14))
+par(mfrow=c(6,1),mar=c(0,8,0,14))
 
 #sort the entire data frame according to the group solution you are interested in
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=2, border=TRUE, legend=FALSE)
+tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
+
+#plot variable am
+tt=panelet.category(pp=mtcars.sort$am, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am", get.pval=TRUE)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

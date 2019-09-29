@@ -2,11 +2,11 @@
 \alias{get.colvector}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
- Returns a color vector of unique values of interest.
+ Returns a color vector corresponding to values of class labels.
 }
 
 \description{
- Given a vector of class labels, return a color vector correponding to the unique class values. There is an option to set a different color for \code{NA}. A vector with corresponding color values and a key specifying color value of each class label is returned.
+ Given a vector of class labels, return a color vector correponding to the class values. There is an option to set a different color for \code{NA}. A vector with corresponding color values and a key specifying color value of each class label is returned.
 }
 
 \usage{
@@ -15,9 +15,9 @@ get.colvector(labels,col, NA.flag=FALSE, NA.col="grey")
 
 \arguments{
   \item{labels}{ vector, labels for which color vector is desired. Can be \code{numeric, character} or \code{factor}. If it is a \code{factor} colors are coded in the order of \code{levels} of a \code{factor} }
-  \item{col}{ vector, a character vector containing colors for each unique class label. Also accepts colors from \code{colorRampPallette}}
+  \item{col}{ vector, a character vector containing colors for each unique class label. Also accepts colors from \code{colorRampPallette} etc}
   \item{NA.flag}{ logical, a logical flag where \code{NA} in \code{labels} vector are replaced with \code{NA.col}. Default \code{NA.flag} is \code{FALSE}.}
-  \item{NA.col}{ character, color value specifying how \code{NA} should be color coded. Default color value is \code{grey}. Will only color code \code{NA} when \code{NA.flag} is \code{TRUE} }
+  \item{NA.col}{ character, color value specifying how \code{NA} should be color coded. Default color value is \code{grey}. Will only color code \code{NA} when \code{NA.flag} is \code{TRUE} and when present}
 }
 
 \details{
@@ -29,7 +29,7 @@ get.colvector(labels,col, NA.flag=FALSE, NA.col="grey")
 
       \code{labels.col} : {character, a color coded character vector of \code{labels}}
 
-      \code{key}        : { matrix, a character matrix showing how values in \code{labels} have mapped to \code{col} }
+      \code{key}        : { a matrix, a \code{2 x unique class labels} character matrix showing how values in \code{labels} have mapped to \code{col} }
 
 }
 
