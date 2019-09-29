@@ -35,11 +35,11 @@ circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheig
   }
 
   #initialize circomap
-  circos.initialize(factors = ff, x=subs.seq)
+  circlize::circos.initialize(factors = ff, x=subs.seq)
 
   #plot the group variable
   this.col = gcol
-  circos.track(ff, x=group, ylim=c(0,1), panel.fun = function(x,y){
+  circlize::circos.track(ff, x=group, ylim=c(0,1), panel.fun = function(x,y){
     xlim = CELL_META$xlim
     ylim = CELL_META$ylim
     breaks = seq(1, length(x), by=1)
@@ -60,7 +60,7 @@ circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheig
     this.fheight = fheight[[i]]
 
     if(this.type==1){
-      circos.track(ff, x=ff.value, ylim=c(0,1), panel.fun = function(x,y){
+      circlize::circos.track(ff, x=ff.value, ylim=c(0,1), panel.fun = function(x,y){
 
         xlim = CELL_META$xlim
         ylim = CELL_META$ylim
@@ -79,7 +79,7 @@ circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheig
 
     if(this.type==2) {
 
-      circos.track(ff, x=ff.value, ylim=c(0,1), panel.fun = function(x,y){
+      circlize::circos.track(ff, x=ff.value, ylim=c(0,1), panel.fun = function(x,y){
 
         xlim = CELL_META$xlim
         ylim = CELL_META$ylim

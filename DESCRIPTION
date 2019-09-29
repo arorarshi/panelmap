@@ -11,4 +11,5 @@ Suggests:
     testthat
 Imports: 
     coin,
-    plyr
+    plyr,
+    circlize
