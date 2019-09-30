@@ -24,11 +24,19 @@ See below an example of `panelmap`.
 
 ## Installation
 
+```{r, eval=FALSE}
+library(devtools)
+install_github("arorarshi/panelmap")
+
+```
+
+
 ## Requirements 
+_panelmap_ requires the following packages - `coin, plyr and circlize`
 
 ## Example - panelmap 
 
-We will illustarate _panlemap_ by sorting mtcars data according to variable $cyl$ and plotting $mpg, vs, am$ and $gear$ to undersatnd the relationship between them. 
+We will illustarate _panlemap_ by sorting mtcars data according to variable `cyl` and plotting `mpg, vs, am` and `gear` to undersatnd the relationship between them. 
 ```{r,fig.width=8, fig.height=4}
 
 #sort everything by cyl
@@ -41,8 +49,7 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
-tt=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE)
-#kable(tt, caption="Association table corresponding to panelmap")
+tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
 ```
 
 One can see, how all the variables align with vehicles with 4,6 and 8 cylinder engines, all at a single glance!
@@ -54,11 +61,11 @@ One can see, how all the variables align with vehicles with 4,6 and 8 cylinder e
 
 ## Example - circomap 
 
-_circomap_ is a visulaizing tool to plot and anlyze multiple panelmaps, insipired by the circlize^{1} package. 
+_circomap_ is a visulaizing tool to plot and anlyze multiple panelmaps, insipired by the circlize^1^ package. 
 
 To illustrate the functionality of _circomap_ we will draw the above panelmap three times in a circular layout. 
 
-```{r,fig.width=8, fig.height=8}
+```{r,fig.width=8, fig.height=8, message=F}
 #dataset 1
 dat1 = mtcars[order(mtcars$cyl),]
 #dataset 2
@@ -173,7 +180,13 @@ tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars
 
 `makepanel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See [Example]
 
+```{r}
+kable(tab, caption="Association table corresponding to panelmap")
+```
+
 ### circomap 
 
 to do 
 
+##Reference
+1. Gu, Z. circlize implements and enhances circular visualization in R. Bioinformatics 2014.

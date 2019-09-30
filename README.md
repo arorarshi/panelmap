@@ -16,13 +16,20 @@ See below an example of `panelmap`.
 Installation
 ------------
 
+``` r
+library(devtools)
+install_github("arorarshi/panelmap")
+```
+
 Requirements
 ------------
+
+*panelmap* requires the following packages - `coin, plyr and circlize`
 
 Example - panelmap
 ------------------
 
-We will illustarate *panlemap* by sorting mtcars data according to variable *c**y**l* and plotting *m**p**g*, *v**s*, *a**m* and *g**e**a**r* to undersatnd the relationship between them.
+We will illustarate *panlemap* by sorting mtcars data according to variable `cyl` and plotting `mpg, vs, am` and `gear` to undersatnd the relationship between them.
 
 ``` r
 
@@ -36,11 +43,14 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
-tt=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE)
-#kable(tt, caption="Association table corresponding to panelmap")
+tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
+## Performing Kruskal-Wallis test
+## Performing Fisher's Exact test
+## Performing Fisher's Exact test
+## Performing Fisher's Exact test
 ```
 
-<img src="README_figures/README-unnamed-chunk-2-1.png" width="768" />
+<img src="README_figures/README-unnamed-chunk-3-1.png" width="768" />
 
 One can see, how all the variables align with vehicles with 4,6 and 8 cylinder engines, all at a single glance!
 
@@ -51,7 +61,7 @@ One can see, how all the variables align with vehicles with 4,6 and 8 cylinder e
 Example - circomap
 ------------------
 
-*circomap* is a visulaizing tool to plot and anlyze multiple panelmaps, insipired by the circlize^{1} package.
+*circomap* is a visulaizing tool to plot and anlyze multiple panelmaps, insipired by the circlize<sup>1</sup> package.
 
 To illustrate the functionality of *circomap* we will draw the above panelmap three times in a circular layout.
 
@@ -82,15 +92,9 @@ fcol=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","orange"
 fheight<-list(); fheight[1:length(ftoplot)] = 0.08
 #Voila!! 
 circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)
-## Note: 1 point is out of plotting region in sector 'dat1', track
-## '1'.
-## Note: 1 point is out of plotting region in sector 'dat2', track
-## '1'.
-## Note: 1 point is out of plotting region in sector 'dat3', track
-## '1'.
 ```
 
-<img src="README_figures/README-unnamed-chunk-3-1.png" width="768" />
+<img src="README_figures/README-unnamed-chunk-4-1.png" width="768" />
 
 Functions and Usage
 -------------------
@@ -112,7 +116,7 @@ mtcars.sort = mtcars[order(mtcars$cyl),]
 tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
 ```
 
-<img src="README_figures/README-unnamed-chunk-4-1.png" width="768" />
+<img src="README_figures/README-unnamed-chunk-5-1.png" width="768" />
 
 `cex` controls the magnification of text labels on the left-hand side. `border` and `legend` take logical values and their default value is `FALSE`.
 
@@ -148,7 +152,7 @@ am.na[c(1,10,20,30)] = NA
 tt=panelet_category(pp=am.na, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am.na", get.pval=TRUE, NA.flag=TRUE, NA.col="grey", labels.col = "red")
 ```
 
-<img src="README_figures/README-unnamed-chunk-5-1.png" width="768" />
+<img src="README_figures/README-unnamed-chunk-6-1.png" width="768" />
 
 See how there are grey bars in panelet row **am.na** corresponding to NA at values 1,10,20 and 30.
 
@@ -173,12 +177,36 @@ tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars
 ## Performing Kruskal-Wallis test
 ```
 
-<img src="README_figures/README-unnamed-chunk-6-1.png" width="768" />
+<img src="README_figures/README-unnamed-chunk-7-1.png" width="768" />
 
 ### makepanel
 
 `makepanel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See \[Example\]
 
+``` r
+kable(tab, caption="Association table corresponding to panelmap")
+```
+
+|      | 4               | 6                 | 8                 | RowTotal   | pval        |
+|------|:----------------|:------------------|:------------------|:-----------|:------------|
+| mpg  | 26\[21.4-33.9\] | 19.7\[17.8-21.4\] | 15.2\[10.4-19.2\] |            | P&lt;0.0001 |
+| NA   | 0               | 0                 | 0                 |            |             |
+| vs   |                 |                   |                   |            | P&lt;0.0001 |
+| 0    | 1(9%)           | 3(43%)            | 14(100%)          | 18(56.25%) |             |
+| 1    | 10(91%)         | 4(57%)            | 0(0%)             | 14(43.75%) |             |
+| am   |                 |                   |                   |            | 0.0091      |
+| 0    | 3(27%)          | 4(57%)            | 12(86%)           | 19(59.38%) |             |
+| 1    | 8(73%)          | 3(43%)            | 2(14%)            | 13(40.62%) |             |
+| gear |                 |                   |                   |            | P&lt;0.0001 |
+| 3    | 1(9%)           | 2(29%)            | 12(86%)           | 15(46.88%) |             |
+| 4    | 8(73%)          | 4(57%)            | 0(0%)             | 12(37.5%)  |             |
+| 5    | 2(18%)          | 1(14%)            | 2(14%)            | 5(15.62%)  |             |
+
 ### circomap
 
 to do
+
+Reference
+---------
+
+1.  Gu, Z. circlize implements and enhances circular visualization in R. Bioinformatics 2014.
