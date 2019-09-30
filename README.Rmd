@@ -1,5 +1,5 @@
 ---
-title: "Undertsanding panelmap"
+title: "Understanding panelmap"
 output: rmarkdown::github_document
 ---
 
@@ -11,16 +11,6 @@ library(panelmap)
 knitr::opts_chunk$set(collapse=TRUE, comment="##", fig.retina=2, fig.path = "README_figures/README-")
 ```
 
-
-## Introduction
-
-_panelmap_ creates panels for summarizing binary data, categorical data (more than 2 categories) and continuous data for known groups. Groups can arise from classification algorithms such as kmeans, or other class labels as provided by the user. _panelmap_ is a visual aid to understand associations and trends in data instead from tedious tables and trying to infer multiple plots. 
-
-Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets aassemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet_group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet_category] , or continuous - See [panelet_continuous] . The function, [makepanel] , is a wrapper function of the above mentioned functions. 
-
-We will use `mtcars` data set to illustrate the usage of panlemap. 
-
-See below an example of `panelmap`. 
 
 ## Installation
 
@@ -34,9 +24,19 @@ install_github("arorarshi/panelmap")
 ## Requirements 
 _panelmap_ requires the following packages - `coin, plyr and circlize`
 
+## Introduction
+
+_panelmap_ creates panels for summarizing binary data, categorical data (more than 2 categories) and continuous data for known groups. Groups can arise from classification algorithms such as kmeans, or other class labels as provided by the user. _panelmap_ is a visual aid to understand associations and trends in data instead from tedious tables and trying to infer multiple plots. 
+
+Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets assemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet_group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet_category] , or continuous - See [panelet_continuous] . The function, [makepanel] , is a wrapper function of the above mentioned functions. 
+
+We will use `mtcars` data set to illustrate the usage of panelmap. 
+
+See below an example of `panelmap`. 
+
 ## Example - panelmap 
 
-We will illustarate _panlemap_ by sorting mtcars data according to variable `cyl` and plotting `mpg, vs, am` and `gear` to undersatnd the relationship between them. 
+We will illustrate _panlemap_ by sorting mtcars data according to variable `cyl` and plotting `mpg, vs, am` and `gear` to understand the relationship between them. 
 ```{r,fig.width=8, fig.height=4}
 
 #sort everything by cyl
@@ -61,7 +61,7 @@ One can see, how all the variables align with vehicles with 4,6 and 8 cylinder e
 
 ## Example - circomap 
 
-_circomap_ is a visulaizing tool to plot and anlyze multiple panelmaps, insipired by the circlize^1^ package. 
+_circomap_ is a visualizing tool to plot and analyze multiple panelmaps, inspired by the circlize^1^ package. 
 
 To illustrate the functionality of _circomap_ we will draw the above panelmap three times in a circular layout. 
 
@@ -122,7 +122,7 @@ Once we have a group panelet, we can start plotting other variables of interest.
 
 ### panelet_category
 
-This function plots dicrete data type. Usage - `function(pp,pp.col,soln, var.n="var.n",labels.col="black",`
+This function plots discrete data type. Usage - `function(pp,pp.col,soln, var.n="var.n",labels.col="black",`
 
 `NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, cex=1, border.col="black", legend=FALSE)` 
 
@@ -178,7 +178,7 @@ tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars
 
 ### makepanel 
 
-`makepanel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See [Example]
+`makepanel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See [Example - panelmap]
 
 ```{r}
 kable(tab, caption="Association table corresponding to panelmap")
