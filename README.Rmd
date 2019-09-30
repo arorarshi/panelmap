@@ -16,7 +16,7 @@ knitr::opts_chunk$set(collapse=TRUE, comment="##", fig.retina=2, fig.path = "REA
 
 _panelmap_ creates panels for summarizing binary data, categorical data (more than 2 categories) and continuous data for known groups. Groups can arise from classification algorithms such as kmeans, or other class labels as provided by the user. _panelmap_ is a visual aid to understand associations and trends in data instead from tedious tables and trying to infer multiple plots. 
 
-Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets aassemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet.group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet.category] , or continuous - See [panelet.continuous] . The function, [makepanel] , is a wrapper function of the above mentioned functions. 
+Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets aassemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet_group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet_category] , or continuous - See [panelet_continuous] . The function, [makepanel] , is a wrapper function of the above mentioned functions. 
 
 We will use `mtcars` data set to illustrate the usage of panlemap. 
 
@@ -93,7 +93,7 @@ circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)
 
 There are three core functions of `panelmap`.
 
-### panelet.group
+### panelet_group
 
 Given a solution, make a group panelet. Let `cyl` variable with values 4,6 and 8 be our group variable from package `mtcars`. Let's assign the colors `red`, `blue` and `green` to its values as follows :- 
 
@@ -105,7 +105,7 @@ par(mfrow=c(3,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
+tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 ```
 
@@ -113,7 +113,7 @@ tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.nam
 
 Once we have a group panelet, we can start plotting other variables of interest. 
 
-### panelet.category
+### panelet_category
 
 This function plots dicrete data type. Usage - `function(pp,pp.col,soln, var.n="var.n",labels.col="black",`
 
@@ -129,27 +129,27 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
+tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 #plot variable am
-tt=panelet.category(pp=mtcars.sort$am, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am", get.pval=TRUE)
+tt=panelet_category(pp=mtcars.sort$am, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am", get.pval=TRUE)
 
 #plot variable vs
-tt=panelet.category(mtcars.sort$vs, c("white", "black"), mtcars.sort$cyl, "vs", get.pval=TRUE)
+tt=panelet_category(mtcars.sort$vs, c("white", "black"), mtcars.sort$cyl, "vs", get.pval=TRUE)
 
 #let's assign NAs to am
 am.na = mtcars.sort$am
 am.na[c(1,10,20,30)] = NA
-tt=panelet.category(pp=am.na, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am.na", get.pval=TRUE, NA.flag=TRUE, NA.col="grey", labels.col = "red")
+tt=panelet_category(pp=am.na, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am.na", get.pval=TRUE, NA.flag=TRUE, NA.col="grey", labels.col = "red")
 
 ```
 
 See how there are grey bars in panelet row __am.na__ corresponding to NA at values 1,10,20 and 30. 
 
-`panelet.category` also returns the summary of the variable with respect to the group variable along with an association test. 
+`panelet_category` also returns the summary of the variable with respect to the group variable along with an association test. 
 
 
-### panelet.continuous 
+### panelet_continuous 
 
 This function provides a gradient of the values present in the continuous variable. Note that this function plots a gradient and assigns colors relative to the range and magnitude of values in the variable. If the values are a mix of negative and positive values the gradient might look biased and lack in contrast. We will try to address this in a future functionality. 
 
@@ -161,10 +161,10 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=TRUE, legend=FALSE)
+tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=TRUE, legend=FALSE)
 
 #plot variable mpg
-tt =panelet.continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg", labels.col="black",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
+tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg", labels.col="black",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
                        
 ```
 

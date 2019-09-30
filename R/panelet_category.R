@@ -5,7 +5,7 @@ panelet_category<-function(pp,pp.col,soln, var.n="var.n",labels.col="black",NA.f
   if(length(pp) != length(soln)){ stop("length of pp i snot equal to soln vector")}
 
   n<-length(soln)
-  pcol<-get.colvector(pp, pp.col[1:length(unique(pp))], NA.flag, NA.col)
+  pcol<-get.colvector(pp, pp.col[1:length(unique(na.omit(pp)))], NA.flag, NA.col)
   barplot(rep(1,n),col=pcol$labels.col,border=pcol$labels.col,axes=F,space=0)
 
   mtext(var.n,side=2,las=2,cex=cex, col=labels.col)
