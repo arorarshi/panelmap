@@ -16,7 +16,7 @@ knitr::opts_chunk$set(collapse=TRUE, comment="##", fig.retina=2, fig.path = "REA
 
 _panelmap_ creates panels for summarizing binary data, categorical data (more than 2 categories) and continuous data for known groups. Groups can arise from classification algorithms such as kmeans, or other class labels as provided by the user. _panelmap_ is a visual aid to understand associations and trends in data instead from tedious tables and trying to infer multiple plots. 
 
-Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets aassemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet.group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet.category] , or continuous - See [panelet.continuous] . The function, [make.panel] , is a wrapper function of the above mentioned functions. 
+Each row of  _panelmap_ is called a _panelet_ (singular). Many panelets aassemble together to make a _panelmap_ . We first begin by making a panelet for the solution. See [panelet.group]. Rest of the variables are plotted according to the nature of the data - discrete (binary/categorical) - See [panelet.category] , or continuous - See [panelet.continuous] . The function, [makepanel] , is a wrapper function of the above mentioned functions. 
 
 We will use `mtcars` data set to illustrate the usage of panlemap. 
 
@@ -41,8 +41,8 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
-tt=make.panel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE)
-kable(tt, caption="Association table corresponding to panelmap")
+tt=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE)
+#kable(tt, caption="Association table corresponding to panelmap")
 ```
 
 One can see, how all the variables align with vehicles with 4,6 and 8 cylinder engines, all at a single glance!
@@ -169,9 +169,11 @@ tt =panelet.continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars
 ```
 
 
-### make.panel 
+### makepanel 
 
-`make.panel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See [Example]
+`makepanel` is a wrapper function that outputs a legend, an association table and the panelmap, all with one command. You need to provide the meta information of your data set like, colors, data type, labels color etc. See [Example]
 
+### circomap 
 
+to do 
 

@@ -11,5 +11,6 @@ Suggests:
     testthat
 Imports: 
     coin,
-    dplyr,
+    plyr,
     circlize
+RoxygenNote: 6.0.1
