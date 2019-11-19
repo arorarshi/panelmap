@@ -204,7 +204,7 @@ kable(tab, caption="Association table corresponding to panelmap")
 
 ### circomap
 
-to do
+
 
 Reference
 ---------
