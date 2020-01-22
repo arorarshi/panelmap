@@ -2,13 +2,13 @@
 \alias{panelet_category}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-plots categorical values in the order specfied by class labels
+plots categorical values in the order specified by class labels
 }
 \description{
-Plot dicrete categorical values belonging to class labels. Each category can have a unique color and a color for missing if exists. User has the option to perform an association test and output p-value and a contingenecy table summarizing count and proportion.
+Plot discrete categorical values belonging to class labels. Each category can have a unique color and a color for missing if exists. User has the option to perform an association test and output p-value and a contingency table summarizing count and proportion.
 }
 \usage{
-panelet.category(pp,pp.col,soln, var.n="var.n",labels.col="black",NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, cex=1, border.col="black", legend=FALSE)
+panelet.category(pp,pp.col,soln, var.n="var.n",NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", legend=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,18 +16,23 @@ panelet.category(pp,pp.col,soln, var.n="var.n",labels.col="black",NA.flag=FALSE,
   \item{pp.col}{required. vector. A vector of colors of the same length as the unique values in the categorical variable of interest}
   \item{soln}{required. vector. Class labels as passed to \code{panelet_group}}
   \item{var.n}{character. A character specifying the name of the variable. Set to \code{blank ""} if you want to omit printing any text. See \code{cex}}
-  \item{labels.col}{character. default is \code{"black"}. control the color of \code{var.n} and p-value to be printed. }
   \item{NA.flag}{logical, default is \code{FALSE}. see \code{get.colvector} for details}
   \item{NA.col}{default is "grey". see \code{get.colvector} for details}
   \item{get.pval}{logical, default is \code{FALSE}. Perform Fisher's Exact Test to test for association between the group variable and the categorical variable of interest. If \code{TRUE} a table summarizing count and proportion is returned as well. }
 
-  \item{cex}{default is \code{1}. Control the magnificatiopn of category labels and p-value text. if \code{get.pvalue=TRUE}}
-  \item{border}{logical, default is \code{FALSE}. Add a border outside panelet and demarking group boundaries }
+  \item{border}{logical, default is \code{FALSE}. Add a border outside panelet and demarcating group boundaries }
   \item{border.col}{ default is \code{"black"}, if \code{border=TRUE}, you can specify the color of the border to be plotted. Plots outside the panelet and class boundaries}
   \item{legend}{logical. default is \code{FALSE}. if \code{TRUE} it returns a key specifying each color assigned to the categories. Only displays in the plot with \code{makepanel}}
+   \item{...}{pass optional arguments here}
+
 }
+
+
 \details{
-A colored \code{panelet} of categorical values is plotted. Make sure the variable is ordered accordign to the group labels in \code{panelet_group}.
+
+\code{...} can pass other parameters. Use it for controlling names and colors of panelets via  \code{cex, col}. border line type and thickness can be controlled via \code{lty} and \code{lwd} respectively.
+
+A colored \code{panelet} of categorical values is plotted. Make sure the variable is ordered according to the group labels in \code{panelet_group}.
 }
 
 \value{

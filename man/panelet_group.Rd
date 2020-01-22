@@ -9,7 +9,7 @@ Given ordered class labels, make a row of colors grouped by the categories of cl
 
 }
 \usage{
-panelet.group(soln, soln.col,soln.name="group", cex=1,border=FALSE, legend=FALSE)
+panelet.group(soln, soln.col,soln.name="group",border=FALSE, border.col="black", legend=FALSE, ...)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -19,10 +19,17 @@ panelet.group(soln, soln.col,soln.name="group", cex=1,border=FALSE, legend=FALSE
   \item{soln.name}{ a string, name of your group labels}
   \item{cex}{ default is 1. Adjust the font size of \code{soln.name}}
   \item{border}{logical. default is \code{FALSE}. If \code{TRUE} a border in black color is drawn across the color vector. }
+  \item{border.col}{ default is \code{"black"}, if \code{border=TRUE}, you can specify the color of the border to be plotted. Plots outside the panelet and class boundaries}
   \item{legend}{logical. default is \code{FALSE}. if \code{TRUE} it returns a key specifying each color assigned to the class labels. Only displays in the plot with \code{makepanel} }
-
+  \item{...}{pass optional arguments here}
 }
+
+
+
+
 \details{
+
+\code{...} can pass other parameters. Use it for controlling names and colors of panelets via  \code{cex, col}. border line type and thickness can be controlled via \code{lty} and \code{lwd} respectively.
 
 }
 \value{
