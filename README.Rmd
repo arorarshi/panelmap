@@ -116,15 +116,15 @@ tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.nam
 
 ```
 
-`cex` controls the magnification of text labels on the left-hand side. `border` and `legend` take logical values and their default value is `FALSE`. 
+`cex` controls the magnification of text labels on the left-hand side and is passed as part of `(...)`. Other relevant parameters that can be passed are `col` - to change color of text labels. `lty` and `lwd` to change border line type and magnification, as in baseR. `border` and `legend` take logical values and their default value is `FALSE`. 
 
 Once we have a group panelet, we can start plotting other variables of interest. 
 
 ### panelet_category
 
-This function plots discrete data type. Usage - `function(pp,pp.col,soln, var.n="var.n",labels.col="black",`
+This function plots discrete data type. Usage - `function(pp,pp.col,soln, var.n="var.n"`
 
-`NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, cex=1, border.col="black", legend=FALSE)` 
+`NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", legend=FALSE)` 
 
 These are the default values to the function. There is an option to assign a color for `NAs` in the data by using `NA.flag` and `NA.col`. User can also control the color of border colors by `border.col` 
 
@@ -147,7 +147,7 @@ tt=panelet_category(mtcars.sort$vs, c("white", "black"), mtcars.sort$cyl, "vs", 
 #let's assign NAs to am
 am.na = mtcars.sort$am
 am.na[c(1,10,20,30)] = NA
-tt=panelet_category(pp=am.na, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am.na", get.pval=TRUE, NA.flag=TRUE, NA.col="grey", labels.col = "red")
+tt=panelet_category(pp=am.na, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am.na", get.pval=TRUE, NA.flag=TRUE, NA.col="grey", col = "red")
 
 ```
 
@@ -171,7 +171,7 @@ mtcars.sort = mtcars[order(mtcars$cyl),]
 tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=TRUE, legend=FALSE)
 
 #plot variable mpg
-tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg", labels.col="black",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
+tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
                        
 ```
 
