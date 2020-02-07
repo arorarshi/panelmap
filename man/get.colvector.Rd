@@ -40,7 +40,7 @@ get.colvector(labels,col, NA.flag=FALSE, NA.col="grey")
 \examples{
 
   set.seed(123)
-  x<-sample(letters[1:4], 20, replace=T)
+  x<-sample(letters[1:4], 20, replace=TRUE)
   #table(x)
   #x
   #a b c d

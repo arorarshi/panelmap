@@ -243,9 +243,7 @@ kable(tab, caption="Association table corresponding to panelmap")
 
 Association table corresponding to panelmap
 
-### circomap
+## Reference
 
-to do
-
-\#\#Reference 1. Gu, Z. circlize implements and enhances circular
-visualization in R. Bioinformatics 2014.
+1.  Gu, Z. circlize implements and enhances circular visualization in R.
+    Bioinformatics 2014.

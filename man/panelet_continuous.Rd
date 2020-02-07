@@ -10,27 +10,24 @@ Plot continuous values belonging to class labels. The values are plotted relativ
 
 }
 \usage{
-panelet_continuous<-function(pp,pp.col,soln, var.n="var.n",labels.col="black",NA.flag=TRUE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", ...)
+panelet_continuous(pp,pp.col,soln, var.n="var.n",NA.flag=TRUE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", ...)
 }
 
 %- maybe also 'usage' for other objects documented here.
 \arguments{
 
 \item{pp}{required. vector. A vector of continuous values of interest }
-  \item{pp.col}{required. vector. A vector of colors out of which a spectrum of relative values will be plotted to make a gradient of continuous values in \code{pp}}
+  \item{pp.col}{required. vector. A vector of colors out of which a spectrum of relative values will be plotted to make a gradient of continuous values in \code{pp}
+  . Order the spectrum of vectors as \code{(low,high)}}
   \item{soln}{required. vector. Class labels as passed to \code{panelet_group}}
   \item{var.n}{character. A character specifying the name of the variable. Set to \code{blank ""} if you want to omit printing any text. See \code{cex}}
-  \item{labels.col}{character. default is \code{"black"}. control the color of \code{var.n} and p-value to be printed. }
-  \item{NA.flag}{logical, default is \code{FALSE}. see \code{get.colvector} for details}
+   \item{NA.flag}{logical, default is \code{FALSE}. see \code{get.colvector} for details}
   \item{NA.col}{default is "grey". see \code{get.colvector} for details}
   \item{get.pval}{logical, default is \code{FALSE}. Perform non parametric association tests to test for association between the group variable and the continuous variable of interest. If \code{TRUE} a table summarizing median value and range in each class is returned as well. }
   \item{border}{logical, default is \code{FALSE}. Add a border outside panelet and demarcating group boundaries }
   \item{border.col}{ default is \code{"black"}, if \code{border=TRUE}, you can specify the color of the border to be plotted. Plots outside the panelet and class boundaries}
   \item{...}{pass optional arguments here}
 }
-
-
-
 
 \details{
 
@@ -65,13 +62,9 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=TRUE, legend=FALSE)
+tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=TRUE, legend=FALSE)
 
 #plot variable mpg
-tt =panelet.continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg", labels.col="black",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
+tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars.sort$cyl,var.n="mpg", labels.col="black",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
 ## Performing Kruskal-Wallis test
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

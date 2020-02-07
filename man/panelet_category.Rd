@@ -8,7 +8,7 @@ plots categorical values in the order specified by class labels
 Plot discrete categorical values belonging to class labels. Each category can have a unique color and a color for missing if exists. User has the option to perform an association test and output p-value and a contingency table summarizing count and proportion.
 }
 \usage{
-panelet.category(pp,pp.col,soln, var.n="var.n",NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", legend=FALSE)
+panelet_category(pp,pp.col,soln, var.n="var.n",NA.flag=FALSE, NA.col="grey", get.pval=FALSE, border=FALSE, border.col="black", legend=FALSE,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -62,10 +62,6 @@ par(mfrow=c(3,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-panelet.group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=2, border=TRUE, legend=FALSE)
+panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=2, border=TRUE, legend=FALSE)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

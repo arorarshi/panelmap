@@ -9,7 +9,7 @@ A vector based summary function. Provides a table with percentages for dicrete d
 
 }
 \usage{
-get.summary(var, type)
+get.summary(var, type, type2="range")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -19,7 +19,7 @@ get.summary(var, type)
 
     \code{type=2}{ if \code{x} is dicrete}
 
-  \item{type2}{ if \code{type=2} specify whether you want range or standard deviation. default is - \code{"range"} }
+  \item{type2}{ if \code{type=2} specify whether you want range or standard deviation. default is - \code{"range"}, For sd pass \code{"sd"} }
 
 }
 
@@ -46,7 +46,7 @@ Arshi Arora}
 
 #when type=1, data is discrete
 set.seed(123)
-x<-sample(1:3,50, replace=T)
+x<-sample(1:3,50, replace=TRUE)
 get.summary(x,type=1)
 #        1         2         3
 #"17(34%)" "15(30%)" "18(36%)"

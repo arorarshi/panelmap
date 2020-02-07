@@ -8,7 +8,7 @@ sumamrizes and does association test for 2 or more variables
 Sumamrize and provide p-value after association test of 2 or more variables. Percentages are reported for discrete variables. Users can choose the type of test they want. For continuous variable median and range are reported if the test specifid is non parametric, mean and standard deviation are reported for a parametric test.  For discrete categories we perform Fisher's Exact Test, for continous following options are available - parametric - Students' T-Test or one way ANNOVA, for non-paramteric Wilcoxon Rank sum test or Kruskal Wallis test.
 }
 \usage{
-get.summary2(fac, var, type)
+get.summary2(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -50,8 +50,8 @@ Arshi Arora}
 
 #two categorical variables
 set.seed(100)
-fac<-sample(1:2, 50, replace=T)
-var<-sample(1:3, 50, replace=T)
+fac<-sample(1:2, 50, replace=TRUE)
+var<-sample(1:3, 50, replace=TRUE)
 get.summary2(fac,var, type=1,var.n="Example, Type=1" )
 
 #Performing Fisher's Exact test
@@ -83,7 +83,7 @@ get.summary2(fac, var,  type=2, test.type="np", var.n="2-Way, test.type=np")
 #NA                  "2.58"             "1.73"              ""       ""
 
 
-fac<-sample(1:3, 50, replace=T)
+fac<-sample(1:3, 50, replace=TRUE)
 get.summary2(fac, var,  type=2, test.type="p",var.n="Example, test.type=p")
 #Performing one way ANOVA
 #|                     |1           |2          |3         |RowTotal |pval  |

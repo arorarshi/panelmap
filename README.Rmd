@@ -185,9 +185,7 @@ tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), soln=mtcars
 kable(tab, caption="Association table corresponding to panelmap")
 ```
 
-### circomap 
 
-to do 
 
-##Reference
+## Reference
 1. Gu, Z. circlize implements and enhances circular visualization in R. Bioinformatics 2014.
