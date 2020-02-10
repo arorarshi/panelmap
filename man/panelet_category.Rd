@@ -56,7 +56,7 @@ Arshi Arora
 \examples{
 
 #adjust margins and number of panelet values
-par(mfrow=c(3,1),mar=c(0,8,0,14))
+par(mfrow=c(5,1),mar=c(0,8,0,14))
 
 #sort the entire data frame according to the group solution you are interested in
 mtcars.sort = mtcars[order(mtcars$cyl),]

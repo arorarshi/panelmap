@@ -65,24 +65,21 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous.
 mat.type= c(2,1,1,1)
-tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=2)
-## Performing Kruskal-Wallis test
-## Performing Fisher's Exact test
-## Performing Fisher's Exact test
-## Performing Fisher's Exact test
+tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1)
+
 
 #example to adjust for legend parameters
-\dontrun{
-library(RColorBrewer)
-v1=v5= sample(c(1:3),50, replace=T)
-v2 = sample(c("aa","bb"),50, replace=T)
-v3 = v7 = v9 = sample(c(1:4), 50, replace=T)
-v4 = v6 = v8 = v10 = sample(c(1:6), 50, replace=T)
+v1=v5= sample(c(1:3),50, replace=TRUE)
+v2 = sample(c("aa","bb"),50, replace=TRUE)
+v3 = v7 = v9 = sample(c(1:4), 50, replace=TRUE)
+v4 = v6 = v8 = v10 = sample(c(1:6), 50, replace=TRUE)
 mat = cbind(v2,v3,v4,v5,v6,v7,v8,v9,v10)
 mat.type = rep(1,9)
-#mat.col = list(v2 = c("white", "brown"), v3 = brewer.pal(4,"Dark2"), v7 = brewer.pal(4,"Dark2"), v9=brewer.pal(4,"Dark2"), v4=brewer.pal(6, "PiYG"), v6=brewer.pal(6, "PiYG"), v8=brewer.pal(6, "PiYG"), v10=brewer.pal(6, "PuOr"),v5=brewer.pal(3, "Dark2"))
+col4 = c("cyan4", "coral3", "mediumpurple3", "azure3")
+col6 = c("lightpink3", "lightpink4", "lightsalmon2", "lightsalmon3","lightsalmon4", "mistyrose3")
+mat.col = list(v2 = c("white", "brown"), v3 = col4, v7 = col4, v9=col4, v4=col6, v6=col6, v8=col6, v10=col6,v5=c("mediumpurple3", "azure3", "lightsalmon4"))
 v1 = v1[order(v1)]
-#makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE)
-#makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4,lcex=1.4,lheight=4)
-}
+
+makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4, lcex=1.4, lheight=4)
+
 }

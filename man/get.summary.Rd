@@ -48,23 +48,17 @@ Arshi Arora}
 set.seed(123)
 x<-sample(1:3,50, replace=TRUE)
 get.summary(x,type=1)
-#        1         2         3
-#"17(34%)" "15(30%)" "18(36%)"
 
 #lets see with NAs
 x[c(1,5,30)] = NA
 get.summary(x,type=1)
-#        1         2         3      <NA>
-#"15(30%)" "15(30%)" "17(34%)"   "3(6%)"
 
 #when type=2, data is continuous
 set.seed(123)
 x<-rnorm(50)
 get.summary(x, type=2, type2="range")
-#[1] "-0.07(-1.97-2.17); NA=0"
 
 x[c(1,5,30)] = NA
-#get.summary(x, type=2, type2="sd")
-#[1] "-0.08(0.93); NA=3"
+get.summary(x, type=2, type2="sd")
 
 }

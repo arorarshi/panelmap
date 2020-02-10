@@ -41,34 +41,15 @@ get.colvector(labels,col, NA.flag=FALSE, NA.col="grey")
 
   set.seed(123)
   x<-sample(letters[1:4], 20, replace=TRUE)
-  #table(x)
-  #x
-  #a b c d
-  #4 5 4 7
+  table(x)
 
   x.col<-get.colvector(x,c("red","blue","green","orange"))
-  #x.col$labels.col
-  #[1] "blue"   "orange" "blue"   "orange" "orange" "red"    "green"  "orange"
-  #[9] "green"  "blue"   "orange" "blue"   "green"  "green"  "red"    "orange"
-  #[17] "red"    "red"    "blue"   "orange"
-
-  #x.col$key
-  #[,1]  [,2]   [,3]    [,4]
-  #ul  "a"   "b"    "c"     "d"
-  #col "red" "blue" "green" "orange"
+  x.col
 
   #lets add some NAs
   x[c(1,4,5)] = NA
-  #
-  x.col<-get.colvector(x,c("red","blue","green","orange"), NA.flag=TRUE, NA.col="grey")
-  # x.col$labels.col
-  #[1] "grey"   "orange" "blue"   "grey"   "grey"   "red"    "green"  "orange"
-  #[9] "green"  "blue"   "orange" "blue"   "green"  "green"  "red"    "orange"
-  #[17] "red"    "red"    "blue"   "orange"
-  #x.col$key
-  #[,1]  [,2]   [,3]    [,4]     [,5]
-  #ul  "a"   "b"    "c"     "d"      "NA"
-  #col "red" "blue" "green" "orange" "grey"
 
+  x.col<-get.colvector(x,c("red","blue","green","orange"), NA.flag=TRUE, NA.col="grey")
+  x.col
 
 }
