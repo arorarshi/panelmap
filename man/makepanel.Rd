@@ -80,6 +80,6 @@ col6 = c("lightpink3", "lightpink4", "lightsalmon2", "lightsalmon3","lightsalmon
 mat.col = list(v2 = c("white", "brown"), v3 = col4, v7 = col4, v9=col4, v4=col6, v6=col6, v8=col6, v10=col6,v5=c("mediumpurple3", "azure3", "lightsalmon4"))
 v1 = v1[order(v1)]
 
-makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4, lcex=1.4, lheight=4)
+makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4, lcex=1.2, lheight=4)
 
 }

@@ -52,13 +52,23 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158218181-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158218181-1');
+</script>
+
 
   </head>
 
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-dark navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -69,24 +79,35 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">panelmap</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+  <a href="../reference/index.html">Functions</a>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
+</li>
+<li>
+  <a href="../articles/panelmap_tutorial.html">Getting Started</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://twitter.com/arorarshi">
+    <span class="fa fa-twitter"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="https://github.com/arorarshi">
+    <span class="fa fa-github"></span>
+     
+  </a>
 </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -217,25 +238,22 @@
 
 <span class='co'>#type of each feature. type=1 for discrete and type=2 for continuous.</span>
 <span class='no'>mat.type</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>)
-<span class='no'>tab</span><span class='kw'>=</span><span class='fu'>makepanel</span>(<span class='kw'>soln</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>soln.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>soln.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='kw'>mat</span><span class='kw'>=</span><span class='no'>mat</span>, <span class='kw'>mat.col</span><span class='kw'>=</span><span class='no'>mat.col</span>, <span class='kw'>mat.type</span><span class='kw'>=</span><span class='no'>mat.type</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='message'>Performing Kruskal-Wallis test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='input'><span class='co'>## Performing Kruskal-Wallis test</span>
-<span class='co'>## Performing Fisher's Exact test</span>
-<span class='co'>## Performing Fisher's Exact test</span>
-<span class='co'>## Performing Fisher's Exact test</span>
+<span class='no'>tab</span><span class='kw'>=</span><span class='fu'>makepanel</span>(<span class='kw'>soln</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>soln.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>soln.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='kw'>mat</span><span class='kw'>=</span><span class='no'>mat</span>, <span class='kw'>mat.col</span><span class='kw'>=</span><span class='no'>mat.col</span>, <span class='kw'>mat.type</span><span class='kw'>=</span><span class='no'>mat.type</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='message'>Performing Kruskal-Wallis test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='input'>
 
 <span class='co'>#example to adjust for legend parameters</span>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>RColorBrewer</span>)
-<span class='no'>v1</span><span class='kw'>=</span><span class='no'>v5</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>),<span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='no'>T</span>)
-<span class='no'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"aa"</span>,<span class='st'>"bb"</span>),<span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='no'>T</span>)
-<span class='no'>v3</span> <span class='kw'>=</span> <span class='no'>v7</span> <span class='kw'>=</span> <span class='no'>v9</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>4</span>), <span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='no'>T</span>)
-<span class='no'>v4</span> <span class='kw'>=</span> <span class='no'>v6</span> <span class='kw'>=</span> <span class='no'>v8</span> <span class='kw'>=</span> <span class='no'>v10</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>6</span>), <span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='no'>T</span>)
+<span class='no'>v1</span><span class='kw'>=</span><span class='no'>v5</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>),<span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+<span class='no'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"aa"</span>,<span class='st'>"bb"</span>),<span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+<span class='no'>v3</span> <span class='kw'>=</span> <span class='no'>v7</span> <span class='kw'>=</span> <span class='no'>v9</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>4</span>), <span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+<span class='no'>v4</span> <span class='kw'>=</span> <span class='no'>v6</span> <span class='kw'>=</span> <span class='no'>v8</span> <span class='kw'>=</span> <span class='no'>v10</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>6</span>), <span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
 <span class='no'>mat</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span>(<span class='no'>v2</span>,<span class='no'>v3</span>,<span class='no'>v4</span>,<span class='no'>v5</span>,<span class='no'>v6</span>,<span class='no'>v7</span>,<span class='no'>v8</span>,<span class='no'>v9</span>,<span class='no'>v10</span>)
 <span class='no'>mat.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>1</span>,<span class='fl'>9</span>)
-<span class='co'>#mat.col = list(v2 = c("white", "brown"), v3 = brewer.pal(4,"Dark2"), v7 = brewer.pal(4,"Dark2"), v9=brewer.pal(4,"Dark2"), v4=brewer.pal(6, "PiYG"), v6=brewer.pal(6, "PiYG"), v8=brewer.pal(6, "PiYG"), v10=brewer.pal(6, "PuOr"),v5=brewer.pal(3, "Dark2"))</span>
+<span class='no'>col4</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"cyan4"</span>, <span class='st'>"coral3"</span>, <span class='st'>"mediumpurple3"</span>, <span class='st'>"azure3"</span>)
+<span class='no'>col6</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"lightpink3"</span>, <span class='st'>"lightpink4"</span>, <span class='st'>"lightsalmon2"</span>, <span class='st'>"lightsalmon3"</span>,<span class='st'>"lightsalmon4"</span>, <span class='st'>"mistyrose3"</span>)
+<span class='no'>mat.col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>, <span class='st'>"brown"</span>), <span class='kw'>v3</span> <span class='kw'>=</span> <span class='no'>col4</span>, <span class='kw'>v7</span> <span class='kw'>=</span> <span class='no'>col4</span>, <span class='kw'>v9</span><span class='kw'>=</span><span class='no'>col4</span>, <span class='kw'>v4</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v6</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v8</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v10</span><span class='kw'>=</span><span class='no'>col6</span>,<span class='kw'>v5</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"mediumpurple3"</span>, <span class='st'>"azure3"</span>, <span class='st'>"lightsalmon4"</span>))
 <span class='no'>v1</span> <span class='kw'>=</span> <span class='no'>v1</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='no'>v1</span>)]
-<span class='co'>#makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE)</span>
-<span class='co'>#makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4,lcex=1.4,lheight=4)</span>
-}</div><div class='img'><img src='makepanel-1.png' alt='' width='700' height='433' /></div></pre>
+
+<span class='fu'>makepanel</span>(<span class='no'>v1</span>, <span class='st'>"v1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='no'>mat</span>, <span class='no'>mat.col</span>, <span class='no'>mat.type</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>lnrow</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>lncol</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>lcex</span><span class='kw'>=</span><span class='fl'>1.2</span>, <span class='kw'>lheight</span><span class='kw'>=</span><span class='fl'>4</span>)</div><div class='img'><img src='makepanel-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='makepanel-2.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

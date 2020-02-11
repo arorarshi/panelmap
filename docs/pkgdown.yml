@@ -2,4 +2,7 @@ pandoc: 2.3.1
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles: []
+urls:
+  reference: https://arorarshi.github.io/panelmap//reference
+  article: https://arorarshi.github.io/panelmap//articles
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//index.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/circomap.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/get.colvector.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/get.summary.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/get.summary2.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/makepanel.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/panelet_category.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/panelet_continuous.html</loc>
+  </url>
+  <url>
+    <loc>https://arorarshi.github.io/panelmap//reference/panelet_group.html</loc>
+  </url>
+</urlset>

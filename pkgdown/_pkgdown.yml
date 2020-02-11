@@ -1,0 +1,31 @@
+url: https://arorarshi.github.io/panelmap/
+
+template:
+  params:
+    ganalytics: UA-158218181-1
+
+navbar:
+  bg: dark
+  type: dark
+  title: "bayesplot"
+  left:
+    - text: "Functions"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+    - text: "Getting Started"
+      href: articles/panelmap_tutorial.html
+
+  right:
+   - icon: fa-twitter
+     href: https://twitter.com/arorarshi
+   - icon: fa-github
+     href: https://github.com/arorarshi
+
+
+home:
+  links:
+  - text: Browse source code
+    href: https://github.com/arorarshi/panelmap
+
+
