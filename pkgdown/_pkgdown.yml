@@ -4,10 +4,15 @@ template:
   params:
     ganalytics: UA-158218181-1
 
+home:
+links:
+  - text: Browse source code
+    href: https://github.com/arorarshi/panelmap
+
 navbar:
   bg: dark
   type: dark
-  title: "bayesplot"
+  title: "panelmap"
   left:
     - text: "Functions"
       href: reference/index.html
@@ -22,10 +27,5 @@ navbar:
    - icon: fa-github
      href: https://github.com/arorarshi
 
-
-home:
-  links:
-  - text: Browse source code
-    href: https://github.com/arorarshi/panelmap
 
 

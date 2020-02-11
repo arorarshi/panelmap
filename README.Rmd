@@ -9,13 +9,11 @@ output: rmarkdown::github_document
   [![Codecov test coverage](https://codecov.io/gh/arorarshi/panelmap/branch/master/graph/badge.svg)](https://codecov.io/gh/arorarshi/panelmap?branch=master)
 <!-- badges: end -->
 
-
 ```{r, echo = FALSE}
 library(knitr)
 library(panelmap)
-knitr::opts_chunk$set(collapse=TRUE, comment="##", fig.retina=2, fig.path = "README_figures/README-")
+knitr::opts_chunk$set(collapse=TRUE, fig.retina=2, fig.path = "README_figures/README-")
 ```
-
 
 ## Installation
 
@@ -24,7 +22,6 @@ library(devtools)
 install_github("arorarshi/panelmap")
 
 ```
-
 
 ## Requirements 
 _panelmap_ requires the following packages - `coin, plyr and circlize`
