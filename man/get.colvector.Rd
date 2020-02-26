@@ -6,7 +6,7 @@
 }
 
 \description{
- Given a vector of class labels, return a color vector correponding to the class values. There is an option to set a different color for \code{NA}. A vector with corresponding color values and a key specifying color value of each class label is returned.
+ Given a vector of class labels, return a color vector corresponding to the class values. There is an option to set a different color for \code{NA}. A vector with corresponding color values and a key specifying color value of each class label is returned.
 }
 
 \usage{

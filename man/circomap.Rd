@@ -31,7 +31,7 @@ circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)
   vector. Names of the features to plot. See \code{example}
 }
   \item{ftype}{
-vector. Type of data type to b eplotted in \code{ftoplot}. \code{1 = discrete/binary}. \code{2 = continuous} .See example below and \code{makepanel}.
+vector. Type of data type to be plotted in \code{ftoplot}. \code{1 = discrete/binary}. \code{2 = continuous} .See example below and \code{makepanel}.
 
 }
   \item{fcol}{

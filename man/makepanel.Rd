@@ -8,17 +8,17 @@ A wrapper function to plot \code{panelmap} with one line command
 A wrapper function to plot \code{panelmap} with one line command, which internally calls \code{panelet_category}, \code{panelet_group}, and \code{panelet_continuous}. One can pass all parameters in one go. For panelet level customization, use without wrapper function
 }
 \usage{
-makepanel(soln, soln.name,soln.col,mat, mat.col,mat.type, legend=FALSE, get.pval=FALSE,NA.flag=FALSE, NA.col="grey", border=FALSE, border.col="black", lnrow=3, lncol=5,lcex=1, legend.vec=NULL, legend.col=NULL, lheight=1, ...)
+makepanel(gr, gr.name="Group",gr.col,mat, mat.col,mat.type, legend=FALSE, get.pval=FALSE,NA.flag=FALSE, NA.col="grey", border=FALSE, border.col="black", lnrow=3, lncol=5,lcex=1, legend.vec=NULL, legend.col=NULL, lheight=1, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
 
-  \item{soln}{required. vector. Class or group labels. see \code{panelet_group}}
-  \item{soln.name}{a string, name for your class or group labels}
-  \item{soln.col}{a vector of colors specified for each class in \code{soln}. Also accepts vector from \code{RcolorBrewer}}
-  \item{mat}{data frame. of values that you want to plot. Make sure they are ordered in the same order as \code{soln} vector.}
-  \item{mat.col}{list. of color values to be coded. names of the list are column names of \code{mat} see example below.}
-  \item{mat.type}{vector. type of data type in mat. \code{1 = discrete/binary}. \code{2 = continuous} .See example below.}
+  \item{gr}{required. vector. Class or group labels. see \code{panelet_group}}
+  \item{gr.name}{a string, name for your class or group labels}
+  \item{gr.col}{required. a vector of colors specified for each class in \code{gr}. Also accepts vector from \code{RcolorBrewer}}
+  \item{mat}{required. data frame. of values that you want to plot. Make sure they are ordered in the same order as \code{gr} vector.}
+  \item{mat.col}{required. list. of color values to be coded. names of the list are column names of \code{mat} see example below.}
+  \item{mat.type}{required. vector. type of data type in mat. \code{1 = discrete/binary}. \code{2 = continuous} .See example below.}
   \item{NA.flag}{logical, default is \code{FALSE}. see \code{get.colvector} for details}
   \item{NA.col}{default is "grey". see \code{get.colvector} for details}
   \item{get.pval}{logical, default is \code{FALSE}. Perform non parametric association tests to test for association between the group variable and the continuous variable of interest. If \code{TRUE} a table summarizing median value and range in each class is returned as well. }
@@ -65,7 +65,7 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous.
 mat.type= c(2,1,1,1)
-tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1)
+tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1)
 
 
 #example to adjust for legend parameters
@@ -80,6 +80,6 @@ col6 = c("lightpink3", "lightpink4", "lightsalmon2", "lightsalmon3","lightsalmon
 mat.col = list(v2 = c("white", "brown"), v3 = col4, v7 = col4, v9=col4, v4=col6, v6=col6, v8=col6, v10=col6,v5=c("mediumpurple3", "azure3", "lightsalmon4"))
 v1 = v1[order(v1)]
 
-makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=4, lcex=1.2, lheight=4)
+makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=5, lcex=1.2, lheight=4)
 
 }

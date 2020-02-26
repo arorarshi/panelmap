@@ -9,14 +9,14 @@ Given ordered class labels, make a row of colors grouped by the categories of cl
 
 }
 \usage{
-panelet_group(soln, soln.col,soln.name="group",border=FALSE, border.col="black", legend=FALSE, ...)
+panelet_group(gr, gr.col,gr.name="group",border=FALSE, border.col="black", legend=FALSE, ...)
 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{soln}{a vector, of class labels in the form of character or integer}
-  \item{soln.col}{a vector of colors specified for each class in \code{soln}. Also accepts vector from \code{RcolorBrewer}}
-  \item{soln.name}{ a string, name of your group labels}
+  \item{gr}{a vector, of class labels in the form of character or integer}
+  \item{gr.col}{a vector of colors specified for each class in \code{gr}. Also accepts vector from \code{RcolorBrewer}}
+  \item{gr.name}{ a string, name of your group labels}
   \item{border}{logical. default is \code{FALSE}. If \code{TRUE} a border in black color is drawn across the color vector. }
   \item{border.col}{ default is \code{"black"}, if \code{border=TRUE}, you can specify the color of the border to be plotted. Plots outside the panelet and class boundaries}
   \item{legend}{logical. default is \code{FALSE}. if \code{TRUE} it returns a key specifying each color assigned to the class labels. Only displays in the plot with \code{makepanel} }
@@ -55,9 +55,6 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet_group(soln=mtcars.sort$cyl, soln.col=c("red","blue","green"),soln.name="cyl",cex=1, border=FALSE, legend=FALSE)
-
-#plot variable am
-tt=panelet_category(pp=mtcars.sort$am, pp.col=c("white", "black"), soln=mtcars.sort$cyl, var.n="am", get.pval=TRUE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 }

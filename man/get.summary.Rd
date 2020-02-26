@@ -2,14 +2,14 @@
 \alias{get.summary}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Summarize continuous and dicrete variables.
+Summarize continuous and discrete variables.
 }
 \description{
-A vector based summary function. Provides a table with percentages for dicrete data. And median, mean, range or standard deviation for continuous data.
+A vector based summary function. Provides a table with percentages for discrete data. And median, mean, range or standard deviation for continuous data.
 
 }
 \usage{
-get.summary(var, type, type2="range")
+get.summary(var,type, var.n=NULL, type2="range")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,9 +17,10 @@ get.summary(var, type, type2="range")
   \item{type}{ integer}
     \code{type=1}{ if \code{x} is continuous }
 
-    \code{type=2}{ if \code{x} is dicrete}
+    \code{type=2}{ if \code{x} is discrete}
 
-  \item{type2}{ if \code{type=2} specify whether you want range or standard deviation. default is - \code{"range"}, For sd pass \code{"sd"} }
+  \item{type2}{ if \code{type=2} specify whether you want range or standard deviation. default is - \code{"range"}, For SD pass \code{"sd"} }
+  \item{var.n}{ character. specify the name of the variable that you are summarizing. Default is \code{NULL} }
 
 }
 

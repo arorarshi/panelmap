@@ -2,21 +2,21 @@
 \alias{get.summary2}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-sumamrizes and does association test for 2 or more variables
+summarizes and does association test for 2 or more variables
 }
 \description{
-Sumamrize and provide p-value after association test of 2 or more variables. Percentages are reported for discrete variables. Users can choose the type of test they want. For continuous variable median and range are reported if the test specifid is non parametric, mean and standard deviation are reported for a parametric test.  For discrete categories we perform Fisher's Exact Test, for continous following options are available - parametric - Students' T-Test or one way ANNOVA, for non-paramteric Wilcoxon Rank sum test or Kruskal Wallis test.
+Summarize and provide p-value after association test of 2 or more variables. Percentages are reported for discrete variables. Users can choose the type of test they want. For continuous variable median and range are reported if the test specified is non parametric, mean and standard deviation are reported for a parametric test.  For discrete categories we perform Fisher's Exact Test, for continuous following options are available - parametric - Students' T-Test or one way ANNOVA, for non-parametric Wilcoxon Rank sum test or Kruskal Wallis test.
 }
 \usage{
 get.summary2(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{fac}{ vector, a dicrete vector of interest for which association is to be tested against other categorical or continuous variables}
+  \item{fac}{ vector, a discrete vector of interest for which association is to be tested against other categorical or continuous variables}
   \item{var}{ vector, can be discrete or continuous}
   \item{type}{ \code{type=1} - meaning both \code{fac} and \code{var} are categorical, and Fisher's Exact test will be performed
 
-    \code{type=2} - \code{var} is continous and you can choose from available parameteric (Students' T-Test or one way ANNOVA) and non parametric tests. (Wilcoxon Rank sum test or Kruskal Wallis test.)}
+    \code{type=2} - \code{var} is continuous and you can choose from available parametric (Students' T-Test or one way ANNOVA) and non parametric tests. (Wilcoxon Rank sum test or Kruskal Wallis test.)}
 
   \item{test.type}{possible values - \code{"np"} or \code{"p"}, Default is \code{"np"} (non parametric). Use \code{"p"} for parametric tests}
   \item{skip.test}{ logical, Default is \code{"TRUE"}. A association test is always performed. However, if there are too many categories in \code{fac}, it might slow down computation required for Fishers Exact test, one can decide to skip test by \code{skip.test=FALSE} to prevent limbo. }
@@ -32,7 +32,7 @@ workspace parameter in Fisher's Exact test is set to \code{workspace=2e8}. All p
 
 \value{
 
-\item{fmat}{returns a character matrix summarixing \code{fac} and \code{var}. See \code{examples}}
+\item{fmat}{returns a character matrix summarizing \code{fac} and \code{var}. See \code{examples}}
 
 }
 \references{
