@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">panelmap</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
       </span>
     </div>
 
@@ -130,34 +130,34 @@
     <p>A wrapper function to plot <code>panelmap</code> with one line command, which internally calls <code>panelet_category</code>, <code>panelet_group</code>, and <code>panelet_continuous</code>. One can pass all parameters in one go. For panelet level customization, use without wrapper function</p>
     </div>
 
-    <pre class="usage"><span class='fu'>makepanel</span>(<span class='no'>soln</span>, <span class='no'>soln.name</span>,<span class='no'>soln.col</span>,<span class='no'>mat</span>, <span class='no'>mat.col</span>,<span class='no'>mat.type</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>FALSE</span>,<span class='kw'>NA.flag</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>lnrow</span><span class='kw'>=</span><span class='fl'>3</span>, <span class='kw'>lncol</span><span class='kw'>=</span><span class='fl'>5</span>,<span class='kw'>lcex</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>legend.vec</span><span class='kw'>=</span><span class='kw'>NULL</span>, <span class='kw'>legend.col</span><span class='kw'>=</span><span class='kw'>NULL</span>, <span class='kw'>lheight</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>makepanel</span>(<span class='no'>gr</span>, <span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"Group"</span>,<span class='no'>gr.col</span>,<span class='no'>mat</span>, <span class='no'>mat.col</span>,<span class='no'>mat.type</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>FALSE</span>,<span class='kw'>NA.flag</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>lnrow</span><span class='kw'>=</span><span class='fl'>3</span>, <span class='kw'>lncol</span><span class='kw'>=</span><span class='fl'>5</span>,<span class='kw'>lcex</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>legend.vec</span><span class='kw'>=</span><span class='kw'>NULL</span>, <span class='kw'>legend.col</span><span class='kw'>=</span><span class='kw'>NULL</span>, <span class='kw'>lheight</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>soln</th>
+      <th>gr</th>
       <td><p>required. vector. Class or group labels. see <code>panelet_group</code></p></td>
     </tr>
     <tr>
-      <th>soln.name</th>
+      <th>gr.name</th>
       <td><p>a string, name for your class or group labels</p></td>
     </tr>
     <tr>
-      <th>soln.col</th>
-      <td><p>a vector of colors specified for each class in <code>soln</code>. Also accepts vector from <code>RcolorBrewer</code></p></td>
+      <th>gr.col</th>
+      <td><p>required. a vector of colors specified for each class in <code>gr</code>. Also accepts vector from <code>RcolorBrewer</code></p></td>
     </tr>
     <tr>
       <th>mat</th>
-      <td><p>data frame. of values that you want to plot. Make sure they are ordered in the same order as <code>soln</code> vector.</p></td>
+      <td><p>required. data frame. of values that you want to plot. Make sure they are ordered in the same order as <code>gr</code> vector.</p></td>
     </tr>
     <tr>
       <th>mat.col</th>
-      <td><p>list. of color values to be coded. names of the list are column names of <code>mat</code> see example below.</p></td>
+      <td><p>required. list. of color values to be coded. names of the list are column names of <code>mat</code> see example below.</p></td>
     </tr>
     <tr>
       <th>mat.type</th>
-      <td><p>vector. type of data type in mat. <code>1 = discrete/binary</code>. <code>2 = continuous</code> .See example below.</p></td>
+      <td><p>required. vector. type of data type in mat. <code>1 = discrete/binary</code>. <code>2 = continuous</code> .See example below.</p></td>
     </tr>
     <tr>
       <th>NA.flag</th>
@@ -238,7 +238,7 @@
 
 <span class='co'>#type of each feature. type=1 for discrete and type=2 for continuous.</span>
 <span class='no'>mat.type</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>)
-<span class='no'>tab</span><span class='kw'>=</span><span class='fu'>makepanel</span>(<span class='kw'>soln</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>soln.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>soln.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='kw'>mat</span><span class='kw'>=</span><span class='no'>mat</span>, <span class='kw'>mat.col</span><span class='kw'>=</span><span class='no'>mat.col</span>, <span class='kw'>mat.type</span><span class='kw'>=</span><span class='no'>mat.type</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='message'>Performing Kruskal-Wallis test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='input'>
+<span class='no'>tab</span><span class='kw'>=</span><span class='fu'>makepanel</span>(<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>gr.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='kw'>mat</span><span class='kw'>=</span><span class='no'>mat</span>, <span class='kw'>mat.col</span><span class='kw'>=</span><span class='no'>mat.col</span>, <span class='kw'>mat.type</span><span class='kw'>=</span><span class='no'>mat.type</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='message'>Performing Kruskal-Wallis test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='output co'>#&gt; <span class='message'>Performing Fisher's Exact test</span></div><div class='input'>
 
 <span class='co'>#example to adjust for legend parameters</span>
 <span class='no'>v1</span><span class='kw'>=</span><span class='no'>v5</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>),<span class='fl'>50</span>, <span class='kw'>replace</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
@@ -252,8 +252,8 @@
 <span class='no'>mat.col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>v2</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>, <span class='st'>"brown"</span>), <span class='kw'>v3</span> <span class='kw'>=</span> <span class='no'>col4</span>, <span class='kw'>v7</span> <span class='kw'>=</span> <span class='no'>col4</span>, <span class='kw'>v9</span><span class='kw'>=</span><span class='no'>col4</span>, <span class='kw'>v4</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v6</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v8</span><span class='kw'>=</span><span class='no'>col6</span>, <span class='kw'>v10</span><span class='kw'>=</span><span class='no'>col6</span>,<span class='kw'>v5</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"mediumpurple3"</span>, <span class='st'>"azure3"</span>, <span class='st'>"lightsalmon4"</span>))
 <span class='no'>v1</span> <span class='kw'>=</span> <span class='no'>v1</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='no'>v1</span>)]
 
-<span class='fu'>makepanel</span>(<span class='no'>v1</span>, <span class='st'>"v1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='no'>mat</span>, <span class='no'>mat.col</span>, <span class='no'>mat.type</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>lnrow</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>lncol</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>lcex</span><span class='kw'>=</span><span class='fl'>1.2</span>, <span class='kw'>lheight</span><span class='kw'>=</span><span class='fl'>4</span>)</div><div class='img'><img src='makepanel-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='makepanel-2.png' alt='' width='700' height='433' /></div><div class='input'>
-</div></pre>
+<span class='fu'>makepanel</span>(<span class='no'>v1</span>, <span class='st'>"v1"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>), <span class='no'>mat</span>, <span class='no'>mat.col</span>, <span class='no'>mat.type</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>lnrow</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>lncol</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>lcex</span><span class='kw'>=</span><span class='fl'>1.2</span>, <span class='kw'>lheight</span><span class='kw'>=</span><span class='fl'>4</span>)</div><div class='img'><img src='makepanel-1.png' alt='' width='700' height='433' /></div><div class='input'>
+</div><div class='img'><img src='makepanel-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
