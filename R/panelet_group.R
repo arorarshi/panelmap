@@ -3,6 +3,7 @@
 panelet_group<-function(gr, gr.col,gr.name="group", border=FALSE, border.col="black", legend=FALSE, ...){
 
   if(any(is.na(gr))){stop("The group vector can't have NAs! Please remove NAs and provided an ordered vector")}
+  if(is.null(gr) | is.null(gr.col)){ stop("gr and gr.col cannot be NULL")}
   dots <- list(...)
   n<-length(gr)
   group.col = get.colvector(gr,gr.col)

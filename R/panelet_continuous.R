@@ -1,9 +1,11 @@
 #plot panelet containing continuous data
 
-panelet_continuous<-function (pp, pp.col, gr, var.n = "var.n", NA.flag = TRUE,
+panelet_continuous<-function (pp, pp.col, gr=NULL, var.n = "var.n", NA.flag = TRUE,
                               NA.col = "grey", get.pval = FALSE, border = FALSE, border.col = "black",
                               ...)
 {
+
+  if(is.null(pp) | is.null(pp.col)){stop("pp and pp.col can't be NULL")}
   if(!is.null(gr)){
     if (any(is.na(pp)) & NA.flag == FALSE) {
       stop("There are NAs in data. Turn NA.flag=TRUE and specify NA.col. NA.col should be different than gradient of pp.col")
