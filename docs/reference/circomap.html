@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">panelmap</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@
     <p><code>circomap</code> plots multiple cohorts having grouped data in the form of a <code>panelmap</code> laid out in a circular fashion. Each pie reflects the relative size of each cohort, and each track is a panelet summarizing a feature.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>circomap</span>(<span class='no'>datasets</span>, <span class='no'>gtoplot</span>, <span class='no'>gcol</span>, <span class='no'>gheight</span>, <span class='no'>ftoplot</span>, <span class='no'>ftype</span>, <span class='no'>fcol</span>, <span class='no'>fheight</span>)</pre>
+    <pre class="usage"><span class='fu'>circomap</span>(<span class='no'>datasets</span>, <span class='no'>gtoplot</span>, <span class='no'>gcol</span>, <span class='no'>gheight</span>, <span class='no'>ftoplot</span>, <span class='no'>ftype</span>, <span class='no'>fcol</span>, <span class='no'>fheight</span>, <span class='kw'>NA.flag</span><span class='kw'>=</span><span class='st'>"FALSE"</span>, <span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,6 +172,14 @@
     <tr>
       <th>fheight</th>
       <td><p>numeric. Height of each of the panelet track.</p></td>
+    </tr>
+    <tr>
+      <th>NA.flag</th>
+      <td><p>logical. default is FALSE. If there are NAs in your categories set it as TRUE</p></td>
+    </tr>
+    <tr>
+      <th>NA.col</th>
+      <td><p>character. Default is "grey". Set the color for NAs</p></td>
     </tr>
     </table>
 

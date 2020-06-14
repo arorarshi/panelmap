@@ -1,4 +1,4 @@
-#panelmap 1.2.1
+# panelmap 1.2.1
 * Fix bug in `circomap` - where different number of group labes were not getting appropriate colors. 
 
 * `circomap` can now take NAs. Added `NA.flag` and `NA.col` functionality
