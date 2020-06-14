@@ -8,7 +8,7 @@ circular layout of more than one \code{panlemaps}
 \code{circomap} plots multiple cohorts having grouped data in the form of a \code{panelmap} laid out in a circular fashion. Each pie reflects the relative size of each cohort, and each track is a panelet summarizing a feature.
 }
 \usage{
-circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)
+circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight, NA.flag="FALSE", NA.col="grey")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -39,6 +39,12 @@ list. A list of color values to be coded. Names of the list are same as \code{ft
 }
   \item{fheight}{
 numeric. Height of each of the panelet track.
+}
+\item{NA.flag}{
+logical. default is FALSE. If there are NAs in your categories set it as TRUE
+}
+\item{NA.col}{
+character. Default is "grey". Set the color for NAs
 }
 }
 \details{

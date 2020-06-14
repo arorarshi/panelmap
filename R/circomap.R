@@ -1,7 +1,7 @@
 #circomap function - cretaes multiple panelmaps in a circular layout
 
 
-circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight){
+circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight, NA.flag=FALSE, NA.col="grey"){
 
   #collect all feeatures across datsets
   ff=NULL
@@ -25,7 +25,7 @@ circomap<-function(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheig
 
   #local functions in side the function to plot
   #as this.col i sa local variable for each ftoplot
-  circlet.category<-function(x){return(get.colvector(x,this.col)$labels.col)}
+  circlet.category<-function(x){return(get.colvector(x,this.col[1:length(unique(na.omit(x)))], NA.flag, NA.col)$labels.col)}
 
   circlet.continuous<-function(x){
     ii <- cut(x, breaks = seq(min(x,na.rm=T), max(x,na.rm=T), length.out = 100), include.lowest = TRUE)
