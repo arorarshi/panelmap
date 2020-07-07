@@ -120,19 +120,19 @@
 <a class="sourceLine" id="cb2-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#type of each feature. type=1 for discrete and type=2 for continuous. </span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11">mat.type=<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">tab=<span class="kw"><a href="reference/makepanel.html">makepanel</a></span>(<span class="dt">soln=</span>mtcars.sort<span class="op">$</span>cyl, <span class="dt">soln.name=</span><span class="st">"cyl"</span>,<span class="dt">soln.col=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"red"</span>,<span class="st">"blue"</span>,<span class="st">"green"</span>), <span class="dt">mat=</span>mat, <span class="dt">mat.col=</span>mat.col, <span class="dt">mat.type=</span>mat.type, <span class="dt">border=</span><span class="ot">TRUE</span>, <span class="dt">legend=</span><span class="ot">TRUE</span>, <span class="dt">get.pval=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">tab=<span class="kw"><a href="reference/makepanel.html">makepanel</a></span>(<span class="dt">gr=</span>mtcars.sort<span class="op">$</span>cyl, <span class="dt">gr.name=</span><span class="st">"cyl"</span>,<span class="dt">gr.col=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"red"</span>,<span class="st">"blue"</span>,<span class="st">"green"</span>), <span class="dt">mat=</span>mat, <span class="dt">mat.col=</span>mat.col, <span class="dt">mat.type=</span>mat.type, <span class="dt">border=</span><span class="ot">TRUE</span>, <span class="dt">legend=</span><span class="ot">TRUE</span>, <span class="dt">get.pval=</span><span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">## Performing Kruskal-Wallis test</span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">## Performing Fisher's Exact test</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">## Performing Fisher's Exact test</span></a>
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">## Performing Fisher's Exact test</span></a></code></pre></div>
-<p><img src="README_figures/README-unnamed-chunk-3-1.png" width="768"></p>
+<p><img src="reference/figures/unnamed-chunk-3-1.png" width="768"></p>
 <p>One can see, how all the variables align with vehicles with 4,6 and 8 cylinder engines, all at a single glance!</p>
 <p><code>vs</code> - Binary variable signaling the engine cylinder configuration a V-shape (vs=0) or Straight Line (vs=1). V</p>
 <p><code>am</code> - A binary variable signaling whether vehicle has automatic (am=0) or manual (am=1) transmission configuration.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">kable</span>(tab, <span class="dt">caption=</span><span class="st">"Association table corresponding to panelmap"</span>)</a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">4</th>
 <th align="left">6</th>
 <th align="left">8</th>
@@ -141,7 +141,7 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>mpg</td>
+<td align="left">mpg</td>
 <td align="left">26[21.4-33.9]</td>
 <td align="left">19.7[17.8-21.4]</td>
 <td align="left">15.2[10.4-19.2]</td>
@@ -149,7 +149,7 @@
 <td align="left">P&lt;0.0001</td>
 </tr>
 <tr class="even">
-<td>NA</td>
+<td align="left">NA</td>
 <td align="left">0</td>
 <td align="left">0</td>
 <td align="left">0</td>
@@ -157,7 +157,7 @@
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td>vs</td>
+<td align="left">vs</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -165,7 +165,7 @@
 <td align="left">P&lt;0.0001</td>
 </tr>
 <tr class="even">
-<td>0</td>
+<td align="left">0</td>
 <td align="left">1(9%)</td>
 <td align="left">3(43%)</td>
 <td align="left">14(100%)</td>
@@ -173,7 +173,7 @@
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td>1</td>
+<td align="left">1</td>
 <td align="left">10(91%)</td>
 <td align="left">4(57%)</td>
 <td align="left">0(0%)</td>
@@ -181,7 +181,7 @@
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td>am</td>
+<td align="left">am</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -189,7 +189,7 @@
 <td align="left">0.0091</td>
 </tr>
 <tr class="odd">
-<td>0</td>
+<td align="left">0</td>
 <td align="left">3(27%)</td>
 <td align="left">4(57%)</td>
 <td align="left">12(86%)</td>
@@ -197,7 +197,7 @@
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td>1</td>
+<td align="left">1</td>
 <td align="left">8(73%)</td>
 <td align="left">3(43%)</td>
 <td align="left">2(14%)</td>
@@ -205,7 +205,7 @@
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td>gear</td>
+<td align="left">gear</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -213,7 +213,7 @@
 <td align="left">P&lt;0.0001</td>
 </tr>
 <tr class="even">
-<td>3</td>
+<td align="left">3</td>
 <td align="left">1(9%)</td>
 <td align="left">2(29%)</td>
 <td align="left">12(86%)</td>
@@ -221,7 +221,7 @@
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td>4</td>
+<td align="left">4</td>
 <td align="left">8(73%)</td>
 <td align="left">4(57%)</td>
 <td align="left">0(0%)</td>
@@ -229,7 +229,7 @@
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td>5</td>
+<td align="left">5</td>
 <td align="left">2(18%)</td>
 <td align="left">1(14%)</td>
 <td align="left">2(14%)</td>
@@ -271,7 +271,7 @@
 <a class="sourceLine" id="cb4-24" data-line-number="24">fheight&lt;-<span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(); fheight[<span class="dv">1</span><span class="op">:</span><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(ftoplot)] =<span class="st"> </span><span class="fl">0.08</span></a>
 <a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">#Voila!! </span></a>
 <a class="sourceLine" id="cb4-26" data-line-number="26"><span class="kw"><a href="reference/circomap.html">circomap</a></span>(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)</a></code></pre></div>
-<p><img src="README_figures/README-unnamed-chunk-5-1.png" width="768"></p>
+<p><img src="reference/figures/unnamed-chunk-5-1.png" width="768"></p>
 </div>
 <div id="reference" class="section level2">
 <h2 class="hasAnchor">

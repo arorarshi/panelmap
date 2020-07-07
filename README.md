@@ -66,14 +66,14 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
-tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
+tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
 ## Performing Kruskal-Wallis test
 ## Performing Fisher's Exact test
 ## Performing Fisher's Exact test
 ## Performing Fisher's Exact test
 ```
 
-<img src="README_figures/README-unnamed-chunk-3-1.png" width="768" />
+<img src="man/figures/unnamed-chunk-3-1.png" width="768" />
 
 One can see, how all the variables align with vehicles with 4,6 and 8
 cylinder engines, all at a single glance\!
@@ -90,7 +90,7 @@ kable(tab, caption="Association table corresponding to panelmap")
 ```
 
 |      | 4               | 6                 | 8                 | RowTotal   | pval      |
-| ---- | :-------------- | :---------------- | :---------------- | :--------- | :-------- |
+| :--- | :-------------- | :---------------- | :---------------- | :--------- | :-------- |
 | mpg  | 26\[21.4-33.9\] | 19.7\[17.8-21.4\] | 15.2\[10.4-19.2\] |            | P\<0.0001 |
 | NA   | 0               | 0                 | 0                 |            |           |
 | vs   |                 |                   |                   |            | P\<0.0001 |
@@ -143,7 +143,7 @@ fheight<-list(); fheight[1:length(ftoplot)] = 0.08
 circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight)
 ```
 
-<img src="README_figures/README-unnamed-chunk-5-1.png" width="768" />
+<img src="man/figures/unnamed-chunk-5-1.png" width="768" />
 
 ## Reference
 

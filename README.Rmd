@@ -12,7 +12,8 @@ output: rmarkdown::github_document
 ```{r, echo = FALSE}
 library(knitr)
 library(panelmap)
-knitr::opts_chunk$set(collapse=TRUE, fig.retina=2, fig.path = "README_figures/README-")
+knitr::opts_chunk$set(collapse=TRUE, fig.retina=2, fig.path = "man/figures/")
+
 ```
 
 ## Installation
@@ -53,7 +54,7 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
-tab=makepanel(soln=mtcars.sort$cyl, soln.name="cyl",soln.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
+tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE)
 ```
 
 One can see, how all the variables align with vehicles with 4,6 and 8 cylinder engines, all at a single glance!
