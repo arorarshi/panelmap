@@ -7,7 +7,7 @@ makepanel_order<-function(orderl="user", mat, mat.col, mat.type, legend=FALSE, g
 
   if(orderl=="user"){
 
-    tab=makepanel(mat=mat, mat.col=mat.col, mat.type=mat.type, legend=legend, get.pval=get.stat, NA.flag=NA.flag, NA.col=NA.col, border=FALSE, border.col="black", lnrow = lnrow, lncol = lncol,lcex = lcex, legend.vec = legend.vec, legend.col = legend.col, lheight = lheight,gr=NULL, ...)
+    tab=makepanel(mat=mat, mat.col=mat.col, mat.type=mat.type, legend=legend, get.pval=get.stat, NA.flag=NA.flag, NA.col=NA.col, lnrow = lnrow, lncol = lncol,lcex = lcex, legend.vec = legend.vec, legend.col = legend.col, lheight = lheight,gr=NULL, ...)
     #colnames(tab) = "Summary";
     return(tab)
 
@@ -20,7 +20,7 @@ makepanel_order<-function(orderl="user", mat, mat.col, mat.type, legend=FALSE, g
     rs = apply(mat,1,sum); cs = apply(mat,2,sum)
     mat.order = mat[order(rs, decreasing=T), order(cs, decreasing=T)]
 
-    tab=makepanel(mat=mat.order, mat.col=mat.col, mat.type=mat.type, legend=legend, get.pval=get.stat, NA.flag=NA.flag, NA.col=NA.col, border=border, border.col=border.col, lnrow = lnrow, lncol = lncol, lcex = lcex, legend.vec = legend.vec, legend.col = legend.col, lheight = lheight,gr=NULL, ...)
+    tab=makepanel(mat=mat.order, mat.col=mat.col, mat.type=mat.type, legend=legend, get.pval=get.stat, NA.flag=NA.flag, NA.col=NA.col,lnrow = lnrow, lncol = lncol, lcex = lcex, legend.vec = legend.vec, legend.col = legend.col, lheight = lheight,gr=NULL, ...)
 
     #colnames(tab) = "Summary";
     return(list(tab = tab, mat.order=mat.order))

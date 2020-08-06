@@ -4,7 +4,7 @@ author: "Arshi Arora"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Tutorial: Function and usage panelmap}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knitr}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -19,12 +19,7 @@ knitr::opts_chunk$set(
 ```{r message=FALSE, include=FALSE}
 
 library(panelmap)
-library(beeswarm)
-library(ggsci)
 library(knitr)
-library(kableExtra)
-library(corrplot)
-library(RColorBrewer)
 knitr::opts_chunk$set(echo=TRUE, results='asis', message=FALSE, comment=NA, fig.align="center")
 
 ```
@@ -41,20 +36,23 @@ This can get tedious, and a more visually appealing approach is required to unde
 
 ```{r bxpl, fig.width=4, fig.height=4}
 
-print(kable(head(mtcars), "html", caption="mtcars dataset") %>%
-        kable_styling(bootstrap_options = "striped", full_width = F,position="left"))
+print(kable(head(mtcars), "html", caption="mtcars dataset"))
 
+soln.col = c("darkred", "dodgerblue", "darkorange","purple")
 
 #mtcars: mpg vs cyl
-boxplot(mpg ~ cyl, data =mtcars, outline = FALSE, main = 'mtcars: cyl vs mpg', varwidth=T, cex.axis=1.5, cex.main=2, frame.plot=F,  xlab="cyl", ylab="mpg", cex.lab=1.5)
-beeswarm(mpg ~ cyl, data = mtcars, col = "cadetblue", pch = 16,cex=1.2, add = TRUE)
-  
+boxplot(mpg ~ cyl, data =mtcars, outline = FALSE, main = 'mtcars: cyl vs mpg', varwidth=T, cex.axis=1.5, cex.main=2, frame.plot=F,  xlab="cyl", ylab="mpg", cex.lab=1.5, col=soln.col[1:3])
+```
+
+
+```{r,eval=F}  
 #or a correlation plot 
 M <-cor(mtcars)
 corrplot(M, type="upper", order="hclust",col=brewer.pal(n=8, name="RdYlBu"))
-soln.col = pal_nejm("default")(7)
 
 ```
+![correlation plot of mtcars.](../man/figures/corr-plot.png){width=400px}
+
 
 ## Example 1 
 
@@ -75,8 +73,7 @@ mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","oran
 #type of each feature. type=1 for discrete and type=2 for continuous. 
 mat.type= c(2,1,1,1)
 tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=soln.col[1:3], mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1.5)
-print(kable(tab, "html", caption="panelmap table") %>%
-        kable_styling(bootstrap_options = "striped", full_width = F,position="left"))
+print(kable(tab, "html", caption="panelmap table"))
 ```
 
 Continuous variable `mpg` is represented as a spectrum of colors between white(low) and darkred(high). See how `mpg` decreases from `cyl` 4-6. 
@@ -92,7 +89,7 @@ All this at one look!
 To compare it with the full correlation matrix, we plot all the features. 
 
 __Taking more features__ 
-```{r, fig.height=10, fig.width=10}
+```{r, fig.height=10, fig.width=10, eval=F}
 #taking more features 
 mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","orange","brown"), mpg=c("white", "darkred"), disp=c("white", "black"), hp=c("white","black"), drat = c("white", "black"), wt=c("white", "darkblue"), carb=brewer.pal(n=6, name="BuGn") )
 
@@ -104,6 +101,7 @@ tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col = soln.col[1:3], mat=mat,
 
 ```
 
+![panelmap on mtcars.](../man/figures/mtcars-big-panelmap.png)
 
 ## Functions and Usage 
 
@@ -111,7 +109,7 @@ There are three core functions of `panelmap`.
 
 ### panelet_group
 
-Given a solution, make a group panelet. Let `cyl` variable with values 4,6 and 8 be our group variable from package `mtcars`. Let's assign the colors `red`, `blue` and `green` to its values as follows :- 
+Given a solution, make a group panelet. Let `cyl` variable with values 4,6 and 8 be our group variable from package `mtcars`. Let's assign the colors `red`, `blue` and `orange` to its values as follows :- 
 
 ```{r, echo=T, fig.width=8, fig.height=2}
 #adjust margins and number of panelet values 
@@ -121,7 +119,7 @@ par(mfrow=c(3,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("darkred", "dodgerblue", "darkorange"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 ```
 
@@ -146,7 +144,7 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("darkred", "dodgerblue", "darkorange"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 #plot variable am
 tt=panelet_category(pp=mtcars.sort$am, pp.col=c("white", "black"), gr=mtcars.sort$cyl, var.n="am", get.pval=TRUE)
@@ -171,7 +169,7 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),gr.name="cyl",cex=1, border=TRUE, legend=FALSE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("darkred", "dodgerblue", "darkorange"),gr.name="cyl",cex=1, border=TRUE, legend=FALSE)
 
 #plot variable mpg
 tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), gr=mtcars.sort$cyl,var.n="mpg",NA.flag=FALSE, get.pval=TRUE, border=TRUE)
@@ -193,7 +191,7 @@ par(mfrow=c(4,1),mar=c(0,8,0,14))
 
 #use sorted mtcars 
 #plot group 
-tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","orange"),gr.name="cyl", cex=2, col="red", border=TRUE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("darkred", "dodgerblue", "darkorange"),gr.name="cyl", cex=2, col="red", border=TRUE)
 
 #plot variable mpg
 tt =panelet_continuous(mtcars.sort$mpg, pp.col=c("white","darkred"), gr=mtcars.sort$cyl,var.n="mpg", cex=1.5, col="black", border=TRUE,border.col="green", lwd=3, lty=2)
@@ -215,8 +213,7 @@ mat.col=list(am=c("white","black"), am.na=c("white", "black"), vs=c("white","bla
 mat.type= c(1,1,1,1)
 tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=soln.col[1:3], mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1.7, NA.flag=TRUE, NA.col="grey",lncol = 7, lcex=1.3)
 
-print(kable(tab, "html", caption="panelmap NA examaple") %>%
-        kable_styling(bootstrap_options = "striped", full_width = F,position="left"))
+print(kable(tab, "html", caption="panelmap NA examaple"))
 ```
 
 

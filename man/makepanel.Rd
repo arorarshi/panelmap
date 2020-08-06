@@ -8,7 +8,9 @@ A wrapper function to plot \code{panelmap} with one line command
 A wrapper function to plot \code{panelmap} with one line command, which internally calls \code{panelet_category}, \code{panelet_group}, and \code{panelet_continuous}. One can pass all parameters in one go. For panelet level customization, use without wrapper function
 }
 \usage{
-makepanel(gr, gr.name="Group",gr.col,mat, mat.col,mat.type, legend=FALSE, get.pval=FALSE,NA.flag=FALSE, NA.col="grey", border=FALSE, border.col="black", lnrow=3, lncol=5,lcex=1, legend.vec=NULL, legend.col=NULL, lheight=1, ...)
+makepanel(gr,gr.name="Group",gr.col,mat,mat.col,mat.type,legend=FALSE,
+get.pval=FALSE,NA.flag=FALSE, NA.col="grey",border=FALSE,
+border.col="black",lnrow=3,lncol=5,lcex=1,legend.vec=NULL,legend.col=NULL, lheight=1, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -61,11 +63,13 @@ mtcars.sort = mtcars[order(mtcars$cyl),]
 mat = mtcars.sort[,c("mpg","vs","am","gear")]
 
 #color assigned to each feature
-mat.col=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","orange","brown"), mpg=c("white", "darkred"))
+mat.col=list(am=c("white","black"), vs=c("white","black"),
+gear=c("yellow","orange","brown"), mpg=c("white", "darkred"))
 
 #type of each feature. type=1 for discrete and type=2 for continuous.
 mat.type= c(2,1,1,1)
-tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=c("red","blue","green"), mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1)
+tab=makepanel(gr=mtcars.sort$cyl, gr.name="cyl",gr.col=c("red","blue","green"),
+mat=mat, mat.col=mat.col, mat.type=mat.type, border=TRUE, legend=TRUE, get.pval=TRUE, cex=1)
 
 
 #example to adjust for legend parameters
@@ -77,9 +81,12 @@ mat = cbind(v2,v3,v4,v5,v6,v7,v8,v9,v10)
 mat.type = rep(1,9)
 col4 = c("cyan4", "coral3", "mediumpurple3", "azure3")
 col6 = c("lightpink3", "lightpink4", "lightsalmon2", "lightsalmon3","lightsalmon4", "mistyrose3")
-mat.col = list(v2 = c("white", "brown"), v3 = col4, v7 = col4, v9=col4, v4=col6, v6=col6, v8=col6, v10=col6,v5=c("mediumpurple3", "azure3", "lightsalmon4"))
+mat.col = list(v2 = c("white", "brown"), v3 = col4, v7 = col4, v9=col4, v4=col6, v6=col6, v8=col6,
+v10=col6, v5=c("mediumpurple3", "azure3", "lightsalmon4"))
+
 v1 = v1[order(v1)]
 
-makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type, legend=TRUE, lnrow=2, lncol=5, lcex=1.2, lheight=4)
+makepanel(v1, "v1", c("red","blue","green"), mat, mat.col, mat.type,
+legend=TRUE, lnrow=2, lncol=5, lcex=1.2, lheight=4)
 
 }

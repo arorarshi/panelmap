@@ -35,9 +35,7 @@ workspace parameter in Fisher's Exact test is set to \code{workspace=2e8}. All p
 \item{fmat}{returns a character matrix summarizing \code{fac} and \code{var}. See \code{examples}}
 
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Arshi Arora}
 

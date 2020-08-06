@@ -9,7 +9,9 @@ A \code{makepanel} functionality with user defined order or when no group is spe
 
 }
 \usage{
-makepanel_order(orderl="user", mat, mat.col, mat.type, legend=FALSE, get.stat=FALSE, NA.flag=FALSE, NA.col="grey", lnrow = 3, lncol = 5,lcex = 1, legend.vec = NULL, legend.col = NULL, lheight = 1,...)
+makepanel_order(orderl="user", mat, mat.col, mat.type, legend=FALSE,
+get.stat=FALSE, NA.flag=FALSE, NA.col="grey", lnrow = 3, lncol = 5,
+lcex = 1, legend.vec = NULL, legend.col = NULL, lheight = 1,...)
 }
 
 \arguments{
@@ -67,6 +69,7 @@ mat.type=rep(1, ncol(mat))
 cc = c("white", "black")
 mat.col<-list(); mat.col[[1]] = cc; mat.col = rep(mat.col,ncol(mat)); names(mat.col) = colnames(mat)
 
-makepanel_order(orderl="bin", mat=mat, mat.col=mat.col, mat.type=mat.type, legend=TRUE, get.stat=TRUE)
+makepanel_order(orderl="bin", mat=mat, mat.col=mat.col,
+mat.type=mat.type, legend=TRUE, get.stat=TRUE)
 
 }

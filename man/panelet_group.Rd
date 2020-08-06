@@ -9,7 +9,8 @@ Given ordered class labels, make a row of colors grouped by the categories of cl
 
 }
 \usage{
-panelet_group(gr, gr.col,gr.name="group",border=FALSE, border.col="black", legend=FALSE, ...)
+panelet_group(gr, gr.col,gr.name="group",border=FALSE,
+border.col="black", legend=FALSE, ...)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -55,6 +56,7 @@ par(mfrow=c(6,1),mar=c(0,8,0,14))
 mtcars.sort = mtcars[order(mtcars$cyl),]
 
 #plot group
-tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
+tt=panelet_group(gr=mtcars.sort$cyl, gr.col=c("red","blue","green"),
+gr.name="cyl",cex=1, border=FALSE, legend=FALSE)
 
 }

@@ -130,7 +130,8 @@
     <p><code>circomap</code> plots multiple cohorts having grouped data in the form of a <code>panelmap</code> laid out in a circular fashion. Each pie reflects the relative size of each cohort, and each track is a panelet summarizing a feature.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>circomap</span>(<span class='no'>datasets</span>, <span class='no'>gtoplot</span>, <span class='no'>gcol</span>, <span class='no'>gheight</span>, <span class='no'>ftoplot</span>, <span class='no'>ftype</span>, <span class='no'>fcol</span>, <span class='no'>fheight</span>, <span class='kw'>NA.flag</span><span class='kw'>=</span><span class='st'>"FALSE"</span>, <span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>)</pre>
+    <pre class="usage"><span class='fu'>circomap</span>(<span class='no'>datasets</span>,<span class='no'>gtoplot</span>,<span class='no'>gcol</span>,<span class='no'>gheight</span>,<span class='no'>ftoplot</span>,<span class='no'>ftype</span>,<span class='no'>fcol</span>,<span class='no'>fheight</span>,
+<span class='kw'>NA.flag</span><span class='kw'>=</span><span class='st'>"FALSE"</span>,<span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -194,9 +195,6 @@
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Gu, Z. circlize implements and enhances circular visualization in R. Bioinformatics 2014.</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p><!-- %%  ~~further notes~~ --></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'>
@@ -226,7 +224,8 @@
 <span class='co'>#features to plot - same as in panelmap example</span>
 <span class='no'>ftoplot</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"mpg"</span>, <span class='st'>"vs"</span>, <span class='st'>"am"</span>, <span class='st'>"gear"</span>)
 <span class='no'>ftype</span><span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>)
-<span class='no'>fcol</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>am</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>,<span class='st'>"black"</span>), <span class='kw'>vs</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>,<span class='st'>"black"</span>), <span class='kw'>gear</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yellow"</span>,<span class='st'>"orange"</span>,<span class='st'>"brown"</span>), <span class='kw'>mpg</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>, <span class='st'>"darkred"</span>))
+<span class='no'>fcol</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>am</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>,<span class='st'>"black"</span>), <span class='kw'>vs</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>,<span class='st'>"black"</span>),
+<span class='kw'>gear</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"yellow"</span>,<span class='st'>"orange"</span>,<span class='st'>"brown"</span>), <span class='kw'>mpg</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>, <span class='st'>"darkred"</span>))
 
 <span class='no'>fheight</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(); <span class='no'>fheight</span>[<span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>ftoplot</span>)] <span class='kw'>=</span> <span class='fl'>0.08</span>
 <span class='co'>#Voila!!</span>
@@ -240,7 +239,6 @@
       <li><a href="#details">Details</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#references">References</a></li>
-      <li><a href="#note">Note</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

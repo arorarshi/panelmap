@@ -130,7 +130,8 @@
     <p>Given ordered class labels, make a row of colors grouped by the categories of class. This is the first plot in <code>makepanel</code>. All subsequent panelets should follow this ordering of class labels.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>panelet_group</span>(<span class='no'>gr</span>, <span class='no'>gr.col</span>,<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"group"</span>,<span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>panelet_group</span>(<span class='no'>gr</span>, <span class='no'>gr.col</span>,<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"group"</span>,<span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>,
+<span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -190,7 +191,8 @@
 <span class='no'>mtcars.sort</span> <span class='kw'>=</span> <span class='no'>mtcars</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='no'>mtcars</span>$<span class='no'>cyl</span>),]
 
 <span class='co'>#plot group</span>
-<span class='no'>tt</span><span class='kw'>=</span><span class='fu'>panelet_group</span>(<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>gr.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>),<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='img'><img src='panelet_group-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='no'>tt</span><span class='kw'>=</span><span class='fu'>panelet_group</span>(<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>gr.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>),
+<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='img'><img src='panelet_group-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

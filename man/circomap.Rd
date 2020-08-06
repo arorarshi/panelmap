@@ -8,7 +8,8 @@ circular layout of more than one \code{panlemaps}
 \code{circomap} plots multiple cohorts having grouped data in the form of a \code{panelmap} laid out in a circular fashion. Each pie reflects the relative size of each cohort, and each track is a panelet summarizing a feature.
 }
 \usage{
-circomap(datasets, gtoplot, gcol, gheight, ftoplot, ftype, fcol, fheight, NA.flag="FALSE", NA.col="grey")
+circomap(datasets,gtoplot,gcol,gheight,ftoplot,ftype,fcol,fheight,
+NA.flag="FALSE",NA.col="grey")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -60,9 +61,6 @@ Gu, Z. circlize implements and enhances circular visualization in R. Bioinformat
 \author{
 Arshi Arora
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -93,7 +91,8 @@ gheight = 0.10 #track height of the group variable
 #features to plot - same as in panelmap example
 ftoplot<-c("mpg", "vs", "am", "gear")
 ftype= c(2,1,1,1)
-fcol=list(am=c("white","black"), vs=c("white","black"), gear=c("yellow","orange","brown"), mpg=c("white", "darkred"))
+fcol=list(am=c("white","black"), vs=c("white","black"),
+gear=c("yellow","orange","brown"), mpg=c("white", "darkred"))
 
 fheight<-list(); fheight[1:length(ftoplot)] = 0.08
 #Voila!!

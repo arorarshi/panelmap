@@ -130,7 +130,8 @@
     <p>Plot discrete categorical values belonging to class labels. Each category can have a unique color and a color for missing if exists. User has the option to perform an association test and output p-value and a contingency table summarizing count and proportion.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>panelet_category</span>(<span class='no'>pp</span>,<span class='no'>pp.col</span>,<span class='no'>gr</span>, <span class='kw'>var.n</span><span class='kw'>=</span><span class='st'>"var.n"</span>,<span class='kw'>NA.flag</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>,<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>panelet_category</span>(<span class='no'>pp</span>,<span class='no'>pp.col</span>,<span class='no'>gr</span>, <span class='kw'>var.n</span><span class='kw'>=</span><span class='st'>"var.n"</span>,<span class='kw'>NA.flag</span><span class='kw'>=</span><span class='fl'>FALSE</span>,
+<span class='kw'>NA.col</span><span class='kw'>=</span><span class='st'>"grey"</span>, <span class='kw'>get.pval</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>border.col</span><span class='kw'>=</span><span class='st'>"black"</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>,<span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -210,7 +211,8 @@
 <span class='no'>mtcars.sort</span> <span class='kw'>=</span> <span class='no'>mtcars</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='no'>mtcars</span>$<span class='no'>cyl</span>),]
 
 <span class='co'>#plot group</span>
-<span class='fu'><a href='panelet_group.html'>panelet_group</a></span>(<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>gr.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>),<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; $key
+<span class='fu'><a href='panelet_group.html'>panelet_group</a></span>(<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>mtcars.sort</span>$<span class='no'>cyl</span>, <span class='kw'>gr.col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>,<span class='st'>"blue"</span>,<span class='st'>"green"</span>),
+<span class='kw'>gr.name</span><span class='kw'>=</span><span class='st'>"cyl"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; $key
 #&gt;     [,1]  [,2]   [,3]   
 #&gt;     "4"   "6"    "8"    
 #&gt; col "red" "blue" "green"
