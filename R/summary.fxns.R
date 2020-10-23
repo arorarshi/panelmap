@@ -44,7 +44,7 @@ get.summary<-function(var,type, var.n=NULL, type2="range"){
 #association tests of continuous and discrete variables in a neat table format
 
 
-get.summary2<-function(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL){
+get.summary2<-function(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL, ...){
 
   if(length(fac) != length(var)){ stop("unequal lengths of fac and var")}
   if(type==2){if(length(which(is.na(fac))) !=0){ stop("Factor variable cannot have NA")}}
@@ -75,7 +75,7 @@ get.summary2<-function(fac,var,type,test.type="np",skip.test=FALSE, var.n=NULL){
     #fisher test handles NA
     if(skip.test==FALSE){
       message("Performing Fisher's Exact test")
-      pp = fisher.test(fac,var,workspace=2e8)$p.value
+      pp = fisher.test(fac,var,workspace=2e8, ...)$p.value
       pp = ifelse(pp<0.0001, "P<0.0001", round(pp,digits=4))
       pval[1] = pp}
 
